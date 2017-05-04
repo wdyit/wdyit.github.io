@@ -1,401 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+extends base
 
-<!-- Head tag -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="一个有梦想的人，start from zero">
-    <meta name="keyword" content="undefined">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="码路" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        视图控制器｜undefined
-        
-    </title>
+block title
+  title= page.title + ' | ' + config.title
 
-    <link rel="canonical" href="http://wdyit.com/2017/05/03/视图控制器/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-</head>
-
-<style>
-
-    header.intro-header {
-        background-image: url('undefined')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    码路
-                </span>
-                's Blog
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-                        
-                    
-                        
-							
-								
-							
-						
-                    
-                        
-							
-                        <li>
-                            <a href="/categories/">categories</a>
-                        </li>
-							
-						
-                    
-                        
-							
-                        <li>
-                            <a href="/tags/">tags</a>
-                        </li>
-							
-						
-                    
-					
-					
-						<li>
-							<a href="/about">About</a>
-						</li>
-					
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-<!-- Main Content -->
-
-<!--only post-->
-
-
-<img class="wechat-title-img"
-     src="">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>视图控制器</h1>
-                    
-                    <span class="meta">
-                         作者 王冬尧
-                        <span>
-                          日期 2017-05-03
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#iOS"
-                           title="iOS">iOS</a>
-                        
-                        <a class="tag" href="/tags/#UIStoryboard"
-                           title="UIStoryboard">UIStoryboard</a>
-                        
-                        <a class="tag" href="/tags/#控制器生命周期"
-                           title="控制器生命周期">控制器生命周期</a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="post-title-haojen">
-        <span>
-            视图控制器
-        </span>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <pre><code>## 视图控制器创建的多种方式
-</code></pre><h4 id="什么是视图控制器"><a href="#什么是视图控制器" class="headerlink" title="什么是视图控制器"></a>什么是视图控制器</h4><ul>
-<li>视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算</li>
-<li>每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样</li>
-<li>前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示</li>
-</ul>
-<h4 id="视图控制器的创建方式"><a href="#视图控制器的创建方式" class="headerlink" title="视图控制器的创建方式"></a>视图控制器的创建方式</h4><ol>
-<li>UIStoryboard的方式<ul>
-<li>获取storyboard箭头所指的视图控制器</li>
-<li>获取storyboard标识了ID所指的视图控制器</li>
-</ul>
-</li>
-<li>直接创建控制器</li>
-<li>创建带xib的视图控制器<ul>
-<li>xib是描述界面长什么样的</li>
-<li>调用控制器的【-(instancetype)initWithNibName:bundle:】;</li>
-<li>方法为什么是nib，因为程序打包运行后，xib会放在bundle目录下，并且后缀名为nib”进入沙盒验证”</li>
-<li>xib的 “File’s Owner” 是代表界面由谁管理，控制器view对应哪个界面的描述</li>
-</ul>
-</li>
-</ol>
-<h4 id="多控制器"><a href="#多控制器" class="headerlink" title="多控制器"></a>多控制器</h4><ol>
-<li>导航控制器<br>(1)导航控制器是用来管多个子控制器，实现不同界面间的 “来回切换”,系统的界面就是一个导航控制器<br>(2)掌握代码创建导航控制器及设置根控制器<br>(3)掌握如何进入到下一个控制器、返回上一个控制器、返回第一控制器<br>(4)理解导航控制器的view的结构<br>(5)掌握导航控制器显示各个子控制器显示的的原理 //栈顶原理<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">栈顶原理</div><div class="line">0.导航控制器将所要显示的子控制器放到一个栈中</div><div class="line">1.导航控制器显示的第一个控制器为栈顶控制器</div><div class="line">2.返回上一个子控制器时，栈顶控制器的view从导航控制器的view中移除，并栈顶控制器将被销毁</div><div class="line">3.把最新的栈顶控制器的view显示在导航控制器view的上面</div><div class="line">4.所有的子控制器会存储在导航控制器的viewControllers属性中</div><div class="line">*/</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>(6)掌握导航控制器中导航栏左右两边的按钮与标题的设置</p>
-<ul>
-<li>每一个控制器有个navigationItem属性</li>
-<li>使用navigationItem可设置标题</li>
-<li>设置标题还可以使用控制器的title属性</li>
-<li>使用navigationItem还可设置左右两边的按钮</li>
-<li>设置返回按钮，当前控制器设置的返回按钮是给下一个控制器显示的</li>
-<li>navigationItem还有个titleView属性，可添加自己义的标题</li>
-</ul>
-<h4 id="控制器的生命周期"><a href="#控制器的生命周期" class="headerlink" title="控制器的生命周期"></a>控制器的生命周期</h4><p>#####理解控制器的生命周期的几个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">viewDidLoad               //view加载完毕</div><div class="line">viewWillAppear            //view即将显示</div><div class="line">viewDidAppear             //view已经显示</div><div class="line">viewWillDisappear         //view即将消失</div><div class="line">viewDidDisappear          //view已经消失</div><div class="line">viewWillUnload            //view即被卸载</div><div class="line">viewDidUnload             //view已经卸载</div><div class="line">dealloc                   //控制器被销毁</div></pre></td></tr></table></figure></p>
-<h4 id="接收到控制器内存警告"><a href="#接收到控制器内存警告" class="headerlink" title="接收到控制器内存警告"></a>接收到控制器内存警告</h4><ul>
-<li>循问当前哪个view可以卸载，比如当前控制器不在窗口上，就代表不用，就进行卸载view</li>
-<li>当view被卸载完后，清空数据来释放内存给别人用</li>
-<li>在arc环境下清空资源前，会先释放</li>
-</ul>
-
-                <hr>
-                
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2017/05/03/上下文绘图，滤镜简单使用/" data-toggle="tooltip" data-placement="top"
-                           title="上下文绘图，滤镜简单使用">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/05/03/数据库操作语句/" data-toggle="tooltip" data-placement="top"
-                           title="数据库操作语句">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-                
-
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是视图控制器"><span class="toc-text">什么是视图控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#视图控制器的创建方式"><span class="toc-text">视图控制器的创建方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多控制器"><span class="toc-text">多控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#控制器的生命周期"><span class="toc-text">控制器的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接收到控制器内存警告"><span class="toc-text">接收到控制器内存警告</span></a></li></ol>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-        </div>
-
-    </div>
-</article>
-
-
-
-
-
-
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; 码路 2017
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <br>
-                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-                </p>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://wdyit.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
-
-
-
-<!-- Baidu Tongji -->
-
-
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','undefined','2.0.0');
-</script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
-</body>
-
-</html>
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format('ll')
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+    if theme.duoshuo
+      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
+    if theme.disqus
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if theme.gentie
+      a.ds-thread-count(class='cloud-tie-join-count', href=url_for(page.path) + '#comments')
+        span.join-count(style='font-size: 15px; color: #6E7173;') 0
+        span= ' ' + __('Discuss')
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content, {list_number: theme.toc_number})
+    .post-content
+      != page.content
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url='#{page.permalink}', data-id='#{page._id}')= __('shareto')
+    include _partial/tag
+    include _partial/post_nav
+    if theme.duoshuo
+      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
+         .ds-share-inline
+            ul.ds-share-icons-16
+              li(data-toggle='ds-share-icons-more')
+                a(class='ds-more' href='javascript:void(0);') 分享到：
+              li
+                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
+              li
+                a(class='ds-qzone' href='javascript:void(0);' data-service='qzone') QQ空间
+              li
+                a(class='ds-qqt' href='javascript:void(0);' data-service='qqt') 腾讯微博
+              li
+                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
+            .ds-share-icons-more
+    if page.comments
+      include _partial/comments

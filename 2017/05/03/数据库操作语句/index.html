@@ -1,437 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+extends base
 
-<!-- Head tag -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="一个有梦想的人，start from zero">
-    <meta name="keyword" content="undefined">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="码路" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        数据库操作语句｜undefined
-        
-    </title>
+block title
+  title= page.title + ' | ' + config.title
 
-    <link rel="canonical" href="http://wdyit.com/2017/05/03/数据库操作语句/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-</head>
-
-<style>
-
-    header.intro-header {
-        background-image: url('undefined')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    码路
-                </span>
-                's Blog
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-                        
-                    
-                        
-							
-								
-							
-						
-                    
-                        
-							
-                        <li>
-                            <a href="/categories/">categories</a>
-                        </li>
-							
-						
-                    
-                        
-							
-                        <li>
-                            <a href="/tags/">tags</a>
-                        </li>
-							
-						
-                    
-					
-					
-						<li>
-							<a href="/about">About</a>
-						</li>
-					
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-<!-- Main Content -->
-
-<!--only post-->
-
-
-<img class="wechat-title-img"
-     src="">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>数据库操作语句</h1>
-                    
-                    <span class="meta">
-                         作者 王冬尧
-                        <span>
-                          日期 2017-05-03
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#iOS"
-                           title="iOS">iOS</a>
-                        
-                        <a class="tag" href="/tags/#CoreData"
-                           title="CoreData">CoreData</a>
-                        
-                        <a class="tag" href="/tags/#NSSortDescriptor"
-                           title="NSSortDescriptor">NSSortDescriptor</a>
-                        
-                        <a class="tag" href="/tags/#DDL"
-                           title="DDL">DDL</a>
-                        
-                        <a class="tag" href="/tags/#数据库"
-                           title="数据库">数据库</a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="post-title-haojen">
-        <span>
-            数据库操作语句
-        </span>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="CoreData"><a href="#CoreData" class="headerlink" title="CoreData"></a>CoreData</h2><h4 id="CoreData的使用步骤"><a href="#CoreData的使用步骤" class="headerlink" title="CoreData的使用步骤"></a>CoreData的使用步骤</h4><pre><code>- 创建模型文件
-- 添加实体
-- 创建实体类
-- 生成上下文件 关联模型文件生成数据库
-- 保存对象到数据库
-- 从数据库获取对象
-- 更新数据
-- 删除数据
-</code></pre><p><strong>数据持久化：是将一个数据保存到文件中，而不是内存中</strong></p>
-<h4 id="CoreData简单用法"><a href="#CoreData简单用法" class="headerlink" title="CoreData简单用法"></a>CoreData简单用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> 1. 创建模型文件</div><div class="line"> 2. 添加实体</div><div class="line"> 3. 创建实体类(就是一张表)</div><div class="line"> 4. 生成上下文件 关联模型文件生成数据库</div><div class="line"> */</div><div class="line"></div><div class="line">- (void)setUpCoreData &#123;</div><div class="line">   /** 关联的时候：如果本地没有这个文件，coreData会自己创建 */</div><div class="line">  /** 生成上下文 */</div><div class="line">  NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];</div><div class="line">  /** 模型文件 */</div><div class="line">  NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];</div><div class="line">  /** 上下文要关联数据库 */</div><div class="line">  /** 持久化调度器 */</div><div class="line">  NSPersistentStoreCoordinator *store = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];</div><div class="line">  /** 告诉CoreData数据库的名字和路径 */</div><div class="line">  NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];</div><div class="line">  NSString *sqlitePath = [doc stringByAppendingString:@&quot;company.sqlite&quot;];</div><div class="line"></div><div class="line">  [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:nil];</div><div class="line"></div><div class="line">  context.persistentStoreCoordinator = store;</div><div class="line"></div><div class="line">  _context = context;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">#pragma mark - 添加</div><div class="line">- (IBAction)addEntity &#123;</div><div class="line">    </div><div class="line">    Entity *enti = [NSEntityDescription insertNewObjectForEntityForName:@&quot;Entity&quot; inManagedObjectContext:_context];</div><div class="line">    enti.name = @&quot;wangwu&quot;;</div><div class="line">    enti.hight = @2.30;</div><div class="line">    </div><div class="line">    NSError *error = nil;</div><div class="line">    [_context save:&amp;error];</div><div class="line">    </div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 读取员工</div><div class="line">- (IBAction)readEntity &#123;</div><div class="line">    </div><div class="line">    /** 1. FetchRequest抓取对象 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 2. 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;wangwu&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    /** 3. 排序 */</div><div class="line">    /** 身高的升序排序 */</div><div class="line">    NSSortDescriptor *heightSort = [NSSortDescriptor sortDescriptorWithKey:@&quot;hight&quot; ascending:YES];</div><div class="line">    request.sortDescriptors = @[heightSort];/*&lt; 数组的条件排序 */</div><div class="line">    </div><div class="line">    </div><div class="line">    /** 4. 执行请求 */</div><div class="line">    NSError *error = nil;</div><div class="line">    NSArray *arr = [_context executeFetchRequest:request error:&amp;error];</div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 遍历数组，读取的内容 */</div><div class="line">    for (Entity *ti in arr) &#123;</div><div class="line">        NSLog(@&quot;%@, %@&quot;, ti.name, ti.hight);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 更新员工</div><div class="line"></div><div class="line">- (IBAction)updateEntity &#123;</div><div class="line">    </div><div class="line">    /** 更改张三  身高两米 */</div><div class="line">    </div><div class="line">    /** 1.查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    /** 执行请求 */</div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 2.更新身高 */</div><div class="line">    for (Entity *en in enti) &#123;</div><div class="line">        en.hight = @2.0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 3.保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 删除</div><div class="line">- (IBAction)delete &#123;</div><div class="line">    </div><div class="line">    /** 找到list */</div><div class="line">    /** .查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 删除 */</div><div class="line">    for (Entity *entity in enti) &#123;</div><div class="line">        [_context deleteObject:entity];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="数据库软件使用中的语句"><a href="#数据库软件使用中的语句" class="headerlink" title="数据库软件使用中的语句"></a>数据库软件使用中的语句</h2><ul>
-<li>DDL：数据定义语句<ul>
-<li>创建表格<ul>
-<li>create table if not exists + 表名 (字段名1 字段类型1，字段名2 字段类型2)</li>
-<li>例子：create table if not exists t_class (id integer primary auto increment, name text);</li>
-</ul>
-</li>
-<li>删除表格<ul>
-<li>drop table if exists + 表名</li>
-<li>DML 数据操作源（增删改查）</li>
-</ul>
-</li>
-<li>插入<ul>
-<li>insert into + 表名 (字段名) values (名)</li>
-<li>INSERT INTO t_class(name) VALUES (‘哈哈哈哈’);</li>
-</ul>
-</li>
-<li>更改<ul>
-<li>update + 表名 set + 字段名 = 字段1的值</li>
-<li>UPDATE t_class SET name = ‘哈哈哈哈’;</li>
-<li>这样的更改是所有的都改</li>
-</ul>
-</li>
-<li>根据条件更改 （where）<ul>
-<li>UPDATE t_student set name = ‘qq’ WHERE age &lt; 10 and id , 50;</li>
-</ul>
-</li>
-<li>删除<ul>
-<li>delete from + 表名</li>
-<li>DELETE FROM t_class;</li>
-</ul>
-</li>
-<li>删除记录，不是删除表<ul>
-<li>DQL语句 用来查询的</li>
-</ul>
-</li>
-<li>查询<ul>
-<li>SELECT name FROM t_class;</li>
-<li>select * from    查询所有字段</li>
-</ul>
-</li>
-<li>查询后排序<ul>
-<li>降序：SELECT * FROM t_student ORDER BY age desc;</li>
-<li>升序：SELECT * FROM t_student ORDER BY age asc;</li>
-</ul>
-</li>
-<li>约束 (建议给字段设定严格的约束，以保证数据的规范性)<ul>
-<li>not null：规定字段的值不能为null</li>
-<li>unique：规定字段的值必须唯一</li>
-<li>default：制定字段的默认值<ul>
-<li>create table t_student (id integer, name text not null unique, age integer not null default 1);</li>
-<li>name字段不能为null，并且唯一</li>
-<li>age字段不能为null，并且默认为1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-                <hr>
-                
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2017/05/03/视图控制器/" data-toggle="tooltip" data-placement="top"
-                           title="视图控制器">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/05/03/Quart2D 一 线面/" data-toggle="tooltip" data-placement="top"
-                           title="Quart2D 一 简单形状、线">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-                
-
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CoreData"><span class="toc-text">CoreData</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CoreData的使用步骤"><span class="toc-text">CoreData的使用步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CoreData简单用法"><span class="toc-text">CoreData简单用法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库软件使用中的语句"><span class="toc-text">数据库软件使用中的语句</span></a></li></ol>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-        </div>
-
-    </div>
-</article>
-
-
-
-
-
-
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; 码路 2017
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <br>
-                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-                </p>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://wdyit.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
-
-
-
-<!-- Baidu Tongji -->
-
-
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','undefined','2.0.0');
-</script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
-</body>
-
-</html>
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format('ll')
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+    if theme.duoshuo
+      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
+    if theme.disqus
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if theme.gentie
+      a.ds-thread-count(class='cloud-tie-join-count', href=url_for(page.path) + '#comments')
+        span.join-count(style='font-size: 15px; color: #6E7173;') 0
+        span= ' ' + __('Discuss')
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content, {list_number: theme.toc_number})
+    .post-content
+      != page.content
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url='#{page.permalink}', data-id='#{page._id}')= __('shareto')
+    include _partial/tag
+    include _partial/post_nav
+    if theme.duoshuo
+      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
+         .ds-share-inline
+            ul.ds-share-icons-16
+              li(data-toggle='ds-share-icons-more')
+                a(class='ds-more' href='javascript:void(0);') 分享到：
+              li
+                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
+              li
+                a(class='ds-qzone' href='javascript:void(0);' data-service='qzone') QQ空间
+              li
+                a(class='ds-qqt' href='javascript:void(0);' data-service='qqt') 腾讯微博
+              li
+                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
+            .ds-share-icons-more
+    if page.comments
+      include _partial/comments

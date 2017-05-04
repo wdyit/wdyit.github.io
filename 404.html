@@ -1,5 +1,11 @@
+extends base
+block title
+  title= page.title + ' | ' + config.title
+block content
+  .post
+    h1.post-title= page.title
+    .post-content
+      != page.content
+  if page.comments
+    include _partial/comments
 
-  
-    <script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-
-  

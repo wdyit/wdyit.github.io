@@ -1,899 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>码路</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个有梦想的人，start from zero">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码路">
-<meta property="og:url" content="http://wdyit.com/index.html">
-<meta property="og:site_name" content="码路">
-<meta property="og:description" content="一个有梦想的人，start from zero">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码路">
-<meta name="twitter:description" content="一个有梦想的人，start from zero">
-  
-    <link rel="alternative" href="/atom.xml" title="码路" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.png">
-  
-  
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
     
     
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+    <!--Simple SEO-->
+
+<meta name="description" content=一个有梦想的人，start from zero/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>码路</title>
+
+<link rel="alternate" href="/atom.xml" title="码路" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/article-exp.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/.css">
+    <!--script-->
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
 </head>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/head.jpg" class="js-avatar">
-            
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">码路</h1>
         </a>
+        
+        <h2 class="subtitle">码路牙子</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
 
-        <hgroup>
-          <h1 class="header-author"><a href="/" title="Hi Mate">王冬尧</a></h1>
-        </hgroup>
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>主题ylion v0.0.0版本即将上线，敬请期待~！
+主题作者：<a href="https://github.com/GeekaholicLin"
+title="fork me" target="_blank">Geekaholic</a></p>
+    </div>
+</li>
 
-        
-        <p class="header-subtitle">码路牙子</p>
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/"><i class="fa" aria-hidden="true">iOS</i></a><span class="category-list-count">7</span></li></ul>
+</li>
 
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/works">作品展示</a></li>
-                        
-                            <li><a href="/about">留言打卡</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
-                            
-                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
-                            
-                                <a class="fl google" target="_blank" href="#" title="google">google</a>
-                            
-                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
-                            
-                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/CoreData/" style="font-size: 10px;">CoreData</a> <a href="/tags/DDL/" style="font-size: 10px;">DDL</a> <a href="/tags/NSSortDescriptor/" style="font-size: 10px;">NSSortDescriptor</a> <a href="/tags/Quart2D/" style="font-size: 15px;">Quart2D</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/UIStoryboard/" style="font-size: 10px;">UIStoryboard</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/Xib/" style="font-size: 10px;">Xib</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS，CGContextRef/" style="font-size: 10px;">iOS，CGContextRef</a> <a href="/tags/控制器生命周期/" style="font-size: 10px;">控制器生命周期</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
-                    
-                    </div>
-                </section>
-                
 
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
-                </section>
-                
-            </div>
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">五月 2017</i></a><span class="archive-list-count">8</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/CoreData/" style="font-size: 0.14rem; color: #69c">CoreData</a> <a href="/tags/iOS/" style="font-size: 0.2rem; color: #0a407c">iOS</a> <a href="/tags/XCode/" style="font-size: 0.14rem; color: #69c">XCode</a> <a href="/tags/CocoaPods/" style="font-size: 0.14rem; color: #69c">CocoaPods</a> <a href="/tags/AutoLayout/" style="font-size: 0.14rem; color: #69c">AutoLayout</a> <a href="/tags/Xib/" style="font-size: 0.14rem; color: #69c">Xib</a> <a href="/tags/Storyboard/" style="font-size: 0.14rem; color: #69c">Storyboard</a> <a href="/tags/Quart2D/" style="font-size: 0.17rem; color: #386da4">Quart2D</a> <a href="/tags/NSSortDescriptor/" style="font-size: 0.14rem; color: #69c">NSSortDescriptor</a> <a href="/tags/DDL/" style="font-size: 0.14rem; color: #69c">DDL</a> <a href="/tags/数据库/" style="font-size: 0.14rem; color: #69c">数据库</a> <a href="/tags/UIStoryboard/" style="font-size: 0.14rem; color: #69c">UIStoryboard</a> <a href="/tags/控制器生命周期/" style="font-size: 0.14rem; color: #69c">控制器生命周期</a> <a href="/tags/iOS，CGContextRef/" style="font-size: 0.14rem; color: #69c">iOS，CGContextRef</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <ul id="main">
+    
+
+    
+    
+    
+    
+    
+    
+    
+    <li  class="article-excerpt-wrap " _href = "/2017/05/04/hello-world/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
         </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">王冬尧</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
-                
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/04/hello-world/">
+                <h2 class="article-title">Hello World</h2>
             </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me">王冬尧</a></h1>
-            </hgroup>
             
-            <p class="header-subtitle">码路牙子</p>
+            <p class="article-content">
+                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate
+More info: Generating
+Deploy to remote sites1$ h...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>null</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/works">作品展示</a></li>
-                
-                    <li><a href="/about">留言打卡</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-                    
-                        <a class="google" target="_blank" href="#" title="google">google</a>
-                    
-                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
-                    
-                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
-                    
-                </div>
-            </nav>
-        </header>                
-    </div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/04/hello-world/" class="article-date">
-      <time datetime="2017-05-04T02:29:04.000Z" itemprop="datePublished">2017-05-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+            null
+            
+        </span>
+    </span>
     
     
-      <header class="article-header">
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/04</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="Hello World"
+              data-leadcloud-url="/2017/05/04/hello-world/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/04/hello-world/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Quart2D 二 饼状图等" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/Quart2D 二 饼状图等/" class="article-date">
-      <time datetime="2017-05-03T04:44:45.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/Quart2D 二 饼状图等/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/Quart2D 二 饼状图等/">
+                <h2 class="article-title">Quart2D 二 (饼状图等)</h2>
+            </a>
+            
+            <p class="article-content">
+                饼状图12345678910111213141516171819202122232425262728293031323334     - (void)drawRect:(CGRect)rect &#123;    // Drawing code    NSArray *arr = @[@20, @43, @37];    NSArray *colorArr = @[[UIColor redColor], [UIColor blueColor], [UIColor greenColor]];    CGFloat radius = self.bounds.size.width * 0.5;    CGPoint center = CGPointMake(radius, radius);        CGFloat startA = 0;    CGFloat angle = 0;  ...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="Quart2D 二 (饼状图等)"
+              data-leadcloud-url="/2017/05/03/Quart2D 二 饼状图等/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/Quart2D 二 饼状图等/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/Quart2D 二 饼状图等/">Quart2D 二 (饼状图等)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">   - (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect &#123;</div><div class="line">    <span class="comment">// Drawing code</span></div><div class="line"></div><div class="line">    <span class="built_in">NSArray</span> *arr = @[@<span class="number">20</span>, @<span class="number">43</span>, @<span class="number">37</span>];</div><div class="line">    <span class="built_in">NSArray</span> *colorArr = @[[<span class="built_in">UIColor</span> redColor], [<span class="built_in">UIColor</span> blueColor], [<span class="built_in">UIColor</span> greenColor]];</div><div class="line">    <span class="built_in">CGFloat</span> radius = <span class="keyword">self</span>.bounds.size.width * <span class="number">0.5</span>;</div><div class="line">    <span class="built_in">CGPoint</span> center = <span class="built_in">CGPointMake</span>(radius, radius);</div><div class="line">    </div><div class="line">    <span class="built_in">CGFloat</span> startA = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> angle = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> endA = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.count; i++) &#123;</div><div class="line">        startA = endA;</div><div class="line">        angle = [arr[i] floatValue] / <span class="number">100</span> * <span class="number">2</span> * M_PI;</div><div class="line">        endA = startA + angle;</div><div class="line">        <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:<span class="literal">YES</span>];</div><div class="line">        [path addLineToPoint:center];</div><div class="line">        </div><div class="line">        [[<span class="keyword">self</span> randomColor] set];</div><div class="line">        [path fill];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIColor</span> *)randomColor</div><div class="line">&#123;</div><div class="line">    <span class="built_in">CGFloat</span> r = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> g = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> b = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> [<span class="built_in">UIColor</span> colorWithRed:r  green:g blue:b alpha:<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect &#123;</div><div class="line">    <span class="comment">// Drawing code</span></div><div class="line">    </div><div class="line">    <span class="built_in">NSArray</span> *arr = [<span class="keyword">self</span> arrRandom];</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="built_in">CGFloat</span> x = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> y = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> w = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> h = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.count; i++) &#123;</div><div class="line">        </div><div class="line">        w = rect.size.width / (<span class="number">2</span> * arr.count - <span class="number">1</span>);</div><div class="line">        x = <span class="number">2</span> * w * i;</div><div class="line">        h = [arr[i] floatValue] / <span class="number">100.0</span> * rect.size.height;</div><div class="line">        y = rect.size.height - h;</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithRect:<span class="built_in">CGRectMake</span>(x, y, w, h)];</div><div class="line">        </div><div class="line">        </div><div class="line">        [[<span class="keyword">self</span> colorRandom] set];</div><div class="line">        </div><div class="line">        [path fill];</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay];</div><div class="line">&#125;</div><div class="line">- (<span class="built_in">NSArray</span> *)arrRandom</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> totoal = <span class="number">100</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">NSMutableArray</span> *arrM = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    </div><div class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>; <span class="comment">// 30 40 30</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arc4random_uniform(<span class="number">10</span>) + <span class="number">1</span>; i++) &#123;</div><div class="line">        temp = arc4random_uniform(totoal) + <span class="number">1</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// 100 1~100</span></div><div class="line">        </div><div class="line">        <span class="comment">// 随机出来的临时值等于总值，直接退出循环，因为已经把总数分配完毕，没必要在分配。</span></div><div class="line">        </div><div class="line">        </div><div class="line">        [arrM addObject:@(temp)];</div><div class="line">        </div><div class="line">        <span class="comment">// 解决方式：当随机出来的数等于总数直接退出循环。</span></div><div class="line">        <span class="keyword">if</span> (temp == totoal) &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        totoal -= temp;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 100 30 1~100</span></div><div class="line">    <span class="comment">// 70 40 0 ~ 69 1 ~ 70</span></div><div class="line">    <span class="comment">// 30 25</span></div><div class="line">    <span class="comment">// 5</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (totoal) &#123;</div><div class="line">        [arrM addObject:@(totoal)];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> arrM;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">UIColor</span> *)colorRandom</div><div class="line">&#123;</div><div class="line">    <span class="comment">// 0 ~ 255 / 255</span></div><div class="line">    <span class="comment">// OC:0 ~ 1</span></div><div class="line">    <span class="built_in">CGFloat</span> r = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> g = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> b = arc4random_uniform(<span class="number">256</span>) / <span class="number">255.0</span>;</div><div class="line">    <span class="keyword">return</span> [<span class="built_in">UIColor</span> colorWithRed:r green:g blue:b alpha:<span class="number">1</span>];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quart2D/">Quart2D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-AutoLayout适配屏幕" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/AutoLayout适配屏幕/" class="article-date">
-      <time datetime="2017-05-03T04:43:25.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/AutoLayout适配屏幕/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/AutoLayout适配屏幕/">
+                <h2 class="article-title">AutoLayout适配屏幕</h2>
+            </a>
+            
+            <p class="article-content">
+                屏幕适配的发展历史
+iPhone3GS\iPhone4
+没有屏幕适配可言
+全部用frame、bounds、center进行布局
+很多这样的现象：坐标值、宽度高度值全部写死
+
+
+
+123objcUIButton *btn1 = [[UIButton alloc] init];btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);
+
+iPad出现、iPhone横屏
+
+出现Autoresizing技术
+让横竖屏适配相对简单
+让子控件可以跟随父控件的行为自动发生相应的变化
+前提是：关闭Autolayout功能
+局限性
+只能解决子控件跟父控件的相对关系问题
+不能解决兄弟控件的相对关系问题
+
+
+
+
+
+
+iOS 6.0（Xcode4）开始
+
+出现了Autolayout技术
+从Xcode5.0(iOS 7.0)开始，开始流行Autolayout
+
+
+
+Aut...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="AutoLayout适配屏幕"
+              data-leadcloud-url="/2017/05/03/AutoLayout适配屏幕/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/AutoLayout适配屏幕/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/AutoLayout适配屏幕/">AutoLayout适配屏幕</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="屏幕适配的发展历史"><a href="#屏幕适配的发展历史" class="headerlink" title="屏幕适配的发展历史"></a>屏幕适配的发展历史</h2><ul>
-<li>iPhone3GS\iPhone4<ul>
-<li>没有屏幕适配可言</li>
-<li>全部用frame、bounds、center进行布局</li>
-<li>很多这样的现象：坐标值、宽度高度值全部写死</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">objc</div><div class="line">UIButton *btn1 = [[UIButton alloc] init];</div><div class="line">btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);</div></pre></td></tr></table></figure>
-<ul>
-<li><p>iPad出现、iPhone横屏</p>
-<ul>
-<li>出现Autoresizing技术<ul>
-<li>让横竖屏适配相对简单</li>
-<li>让子控件可以跟随父控件的行为自动发生相应的变化</li>
-<li>前提是：关闭Autolayout功能</li>
-<li>局限性<ul>
-<li>只能解决子控件跟父控件的相对关系问题</li>
-<li>不能解决兄弟控件的相对关系问题</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>iOS 6.0（Xcode4）开始</p>
-<ul>
-<li>出现了Autolayout技术</li>
-<li>从Xcode5.0(iOS 7.0)开始，开始流行Autolayout</li>
-</ul>
-</li>
-</ul>
-<h2 id="Autolayout"><a href="#Autolayout" class="headerlink" title="Autolayout"></a>Autolayout</h2><ul>
-<li>两个核心概念: 参照，约束</li>
-</ul>
-<h3 id="手动添加约束"><a href="#手动添加约束" class="headerlink" title="手动添加约束"></a>手动添加约束</h3><h4 id="添加约束的规则"><a href="#添加约束的规则" class="headerlink" title="添加约束的规则"></a>添加约束的规则</h4><ul>
-<li><p>在创建约束后，需要将其添加到作用的View上</p>
-</li>
-<li><p>在添加时要注意目标View需要遵从一下规则:</p>
-<ol>
-<li>对于两个同层级view之间的约束关机，添加到他们的父view上</li>
-<li>对于不同层级view之间的约束关系，添加到最接近的共同父view上 </li>
-<li>对于有层次关系的两个view之间的约束，添加到层次较高的父view上</li>
-</ol>
-</li>
-</ul>
-<h4 id="添加约束简单例子"><a href="#添加约束简单例子" class="headerlink" title="添加约束简单例子"></a>添加约束简单例子</h4><ul>
-<li>苹果官方添加约束第一种直接添加的方法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/** 不要将AutoresizingMask 转为 Autolayout的约束 */</div><div class="line">blueView.translatesAutoresizingMaskIntoConstraints = NO;</div><div class="line"></div><div class="line"> UIView *blueView = [[UIView alloc] init];</div><div class="line">    blueView.backgroundColor = [UIColor blueColor];</div><div class="line">    [self.view addSubview:blueView];</div><div class="line">    </div><div class="line">    /** 宽度约束 : 宽度是300 */</div><div class="line">    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:0.0 constant:300];</div><div class="line">    </div><div class="line">    [blueView addConstraint:widthConstraint];</div></pre></td></tr></table></figure>
-<h2 id="代码实现Autolayout方法1-系统"><a href="#代码实现Autolayout方法1-系统" class="headerlink" title="代码实现Autolayout方法1-系统"></a>代码实现Autolayout方法1-系统</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">+(<span class="keyword">instancetype</span>)constraintWithItem:(<span class="keyword">id</span>)view1 attribute:(<span class="built_in">NSLayoutAttribute</span>)attr1 relatedBy:(<span class="built_in">NSLayoutRelation</span>)relation toItem:(<span class="keyword">nullable</span> <span class="keyword">id</span>)view2 attribute:(<span class="built_in">NSLayoutAttribute</span>)attr2 multiplier:(<span class="built_in">CGFloat</span>)multiplier constant:(<span class="built_in">CGFloat</span>)c;</div><div class="line"></div><div class="line"><span class="number">1.</span> view1      : 要约束的控件</div><div class="line"><span class="number">2.</span> attr1   : 约束的类型(做什么样的约束)</div><div class="line"><span class="number">3.</span> relation     : 与参照控件之间的关系</div><div class="line"><span class="number">4.</span> view2   : 参照的控件</div><div class="line"><span class="number">5.</span> attr2   : 约束的类型</div><div class="line"><span class="number">6.</span> multiplier   : 乘数</div><div class="line"><span class="number">7.</span> c            : 常量</div><div class="line"></div><div class="line">``` </div><div class="line"></div><div class="line">* 苹果官方批量添加约束 - VFL</div><div class="line"> * 什么是VFL语言</div><div class="line">  <span class="number">1.</span> VFL全称是Visual Format Language，翻译是“可视化格式语言”</div><div class="line">  <span class="number">2.</span> VFL 是苹果公司为了简化Autolayout的编码而推出的抽象语言</div></pre></td></tr></table></figure>
-<ul>
-<li>(NSArray<__kindof nslayoutconstraint="" *=""> <em>)constraintsWithVisualFormat:(NSString </em>)format options:(NSLayoutFormatOptions)opts metrics:(nullable NSDictionary<nsstring *,id=""> <em>)metrics views:(NSDictionary&lt;NSString </em>, id&gt; *)views;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 代码实现Autolayout方法2-Masonry</div><div class="line">* 目前最流行的Autolayout第三方框架</div><div class="line">* 用优雅的代码方式编写Autolayout</div><div class="line">* 省去了苹果官方超长的Autolayout代码</div><div class="line">* 大大提高了开发效率</div><div class="line">* 框架地址: ****https://github.com/SnapKit/Masonry****</div><div class="line"></div><div class="line">#### 使用例子</div></pre></td></tr></table></figure>
-</nsstring></__kindof></li>
-</ul>
-<p>/**</p>
-<ul>
-<li><p>删除以前的约束，重新添加约束<br>   [blueView mas_remakeConstraints:^(MASConstraintMaker *make) {</p>
-<p>   }];</p>
-</li>
-<li><p>更新约束</p>
-<pre><code>[blueView mas_updateConstraints:^(MASConstraintMaker *make) {
-
-}];
-</code></pre><p>*/</p>
-<p> UIView *blueView = [[UIView alloc] init];<br> blueView.backgroundColor = [UIColor blueColor];<br> [self.view addSubview:blueView];</p>
-<p> blueView.translatesAutoresizingMaskIntoConstraints = NO;</p>
-<p> /<em>* 添加新的约束 </em>/<br> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
-<pre><code>    /** 在block中make创建约束 */
-
-/** 尺寸100*100，粘着父视图间距右下角20 */
-make.width.mas_equalTo(100);
-make.height.mas_equalTo(100);
-make.right.equalTo(self.view).offset(-20);
-make.bottom.equalTo(self.view).offset(-20);
-</code></pre><p> }];</p>
-<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
-<pre><code>/** 在block中make创建约束 */
-
-/** 尺寸100*100，粘着父视图间距右下角20 */
-make.width.height.mas_equalTo(100);
-make.height.mas_equalTo(100);
-make.right.equalTo(self.view).offset(-20);
-make.bottom.equalTo(self.view).offset(-20);
-</code></pre><p> }];</p>
-<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
-<pre><code>/** 在block中make创建约束 */
-
-/** 尺寸100*100，粘着父视图间距右下角20 */
-</code></pre><p>//        make.size.equalTo([NSValue valueWithCGSize:CGSizeMake(100, 100)]);</p>
-<pre><code>make.size.mas_equalTo(CGSizeMake(100, 100));
-make.height.mas_equalTo(100);
-make.right.equalTo(self.view).offset(-20);
-make.bottom.equalTo(self.view).offset(-20);
-</code></pre><p> }];</p>
-<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
-<pre><code>/** 在block中make创建约束 */
-
-/** 尺寸100*100，粘着父视图间距右下角20 */
-/** 默认父控件作为参考 */
-make.size.mas_equalTo(100);
-make.right.offset(-20);
-make.bottom.offset(-20);
-</code></pre><p> }];</p>
-</li>
-</ul>
-<pre><code>/**
- * 乘数比例
- */
-[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-    /** 在block中make创建约束 */
-
-    /** 尺寸100*100，粘着父视图间距右下角20 */
-    /** 默认父控件作为参考 */
-
-    make.size.mas_equalTo(self.view).multipliedBy(0.5);/** 父视图size的一半 */
-    make.right.equalTo(self.view).offset(-20);
-    make.bottom.equalTo(self.view).offset(-20);
-
-}];
-
-
-/** 居中（水平+垂直） */
-/** 尺寸是父控件的一半 */
-
-[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-
-    make.size.mas_equalTo(self.view).multipliedBy(0.5);
-    make.center.mas_equalTo(self.view);
-
-}];
-
-
-
-/** 间距 */
-/**
- * 距离父控件内部都是50间距
- */
-
-[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-
-    make.left.mas_equalTo(self.view).offset(50);
-    make.right.mas_equalTo(self.view).offset(-50);
-    make.top.mas_equalTo(self.view).offset(50);
-    make.bottom.mas_equalTo(self.view).offset(-50);
-
-}];
-
-/** 精简 */
-[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-
-    make.left.and.top.mas_equalTo(self.view).offset(50);
-    make.right.and.bottom.mas_equalTo(self.view).offset(-50);
-
-}];
-
-/** 精简边缘 */
-[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-
-    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(50, 100, 50, 50));/** 设置间距 */
-    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsZero);/** 跟父控件一样大 */
-}];    
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 约束类型</div><div class="line">###### 1.尺寸 : width \ height \ size</div><div class="line">###### 2.边界 : left \ leading \ right \ trailing \ top \ bottom</div><div class="line">###### 3.中心点: center \ centerY \ center X</div><div class="line">###### 4.边距 : edgs</div><div class="line"></div><div class="line">### 有个宏在头文件，用在引用头文件前面，就不用每个方法添加&quot;mas_&quot;了</div></pre></td></tr></table></figure>
-<p>//define this constant if you want to use Masonry without the ‘mas_’ prefix<br>//#define MAS_SHORTHAND</p>
-<p>//define this constant if you want to enable auto-boxing for default syntax<br>//#define MAS_SHORTHAND_GLOBALS<br>```</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoLayout/">AutoLayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Storyboard/">Storyboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xib/">Xib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-XCode集成Cocopods" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/XCode集成Cocopods/" class="article-date">
-      <time datetime="2017-05-03T04:42:25.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/XCode集成Cocopods/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/XCode集成Cocopods/">
+                <h2 class="article-title">XCode集成Cocopods</h2>
+            </a>
+            
+            <p class="article-content">
+                CocoaPods 安装cocoaPods 简介
+每种语言发展到一个阶段，就会出现相应的依赖管理工具，例如Java语言的Maven, nodejs的npm.随着iOS开发者的增多，业界也出现了为iOS程序提供依赖管理的工具，名字叫做 CocoaPods。CocoaPods项目的源码在Github上管理，该项目开始于2011年8月12日，经过多年的发展，现在已经成为iOS开发实施上的依赖管理标准工具。开发iOS项目不可避免的要使用第三方开源库，CocoaPods的出现可以节省设置和更新第三方开源库的时间在没有使用 CocoaPods 以前，我需要:把这些第三方开源库 的源代码文件复制到项目中，或者设置成 git 的 submodule。 对于这些开源库通常需要依赖系统的一些 framework，我需要手工地将这些 framework 分别增加到项目依赖中，比如通常情况下，一个网络库就需...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="XCode集成Cocopods"
+              data-leadcloud-url="/2017/05/03/XCode集成Cocopods/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/XCode集成Cocopods/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/XCode集成Cocopods/">XCode集成Cocopods</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="CocoaPods-安装"><a href="#CocoaPods-安装" class="headerlink" title="CocoaPods 安装"></a>CocoaPods 安装</h1><h2 id="cocoaPods-简介"><a href="#cocoaPods-简介" class="headerlink" title="cocoaPods 简介"></a>cocoaPods 简介</h2><blockquote>
-<p>每种语言发展到一个阶段，就会出现相应的依赖管理工具，例如Java语言的Maven, nodejs的npm.随着iOS开发者的增多，业界也出现了为iOS程序提供依赖管理的工具，名字叫做 CocoaPods。<br>CocoaPods项目的源码在Github上管理，该项目开始于2011年8月12日，经过多年的发展，现在已经成为iOS开发实施上的依赖管理标准工具。开发iOS项目不可避免的要使用第三方开源库，CocoaPods的出现可以节省设置和更新第三方开源库的时间<br>在没有使用 CocoaPods 以前，我需要:<br>把这些第三方开源库 的源代码文件复制到项目中，或者设置成 git 的 submodule。 对于这些开源库通常需要依赖系统的一些 framework，我需要手工地将这些 framework 分别增加到项目依赖中，比如通常情况下，一个网络库就需要增加以下 framework: CFNetwork, SystemConfiguration, MobileCoreServices, CoreGraphics, zlib。 对于某些开源库，我还需要设置-licucore或者 -fno-objc-arc等编译参数 管理这些依赖包的更新。 这些体力活虽然简单，但毫无技术含量并且浪费时间。在使用 CocoaPods 之后，我只需要将用到的第三方开源库放到一个名为 Podfile 的文件中，然后执行pod install。 CocoaPods 就会自动将这些第三方开源库的源码下载下来，并且为我的工程设置好相应的系统依赖和编译参数。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>安装方式一场简单，Mac下都自带ruby，使用ruby的gem命令即可下载安装<ul>
-<li>sudo gem install cocoapods</li>
-<li>pod setup</li>
-</ul>
-</li>
-<li><code>gem -v</code> //获取gem版本信息,查看当前版本是否为最新,否则下一步更新版本</li>
-<li><code>gem update --system</code> //可能需要管理员权限,sudo</li>
-<li><code>gem sources --remove https://rubygems.org/</code> //移除旧的ruby源</li>
-<li><code>gem sources -a https://ruby.taobao.org/</code> //替换为淘宝的镜像</li>
-<li><code>gem sources -l</code> //检查是否修改成功</li>
-<li><code>sudo gem install cocoapods</code> //安装cocoaPods,需要输入密码,为电脑的登录密码</li>
-</ul>
-<h2 id="安装三方库文件"><a href="#安装三方库文件" class="headerlink" title="安装三方库文件"></a>安装三方库文件</h2><ul>
-<li><code>pod setup</code></li>
-<li>将工程文件拖到终端里,获取当前工程路径</li>
-<li><code>touch Podfile</code> //创建Podfile文件, touch命令-新建</li>
-<li><p><code>open Podfile</code> //用Xcode打开 open-打开命令</p>
-</li>
-<li><p>在podfile文件中添加</p>
-</li>
-<li><code>pod search AFNetworking</code> //搜索三方库</li>
-<li><code>pod install --verbose --no-repo-update</code> 查看安装进度并且忽略没用的安装过程</li>
-</ul>
-<h1 id="删除安装的内容"><a href="#删除安装的内容" class="headerlink" title="删除安装的内容"></a>删除安装的内容</h1><ol>
-<li>打开Podfile文件，删除JSONKit该行，即：<ul>
-<li>platform:ios, ‘7.0’</li>
-<li>pod ‘AFNetworking’, ‘~&gt; 2.1.0’</li>
-<li>pod ‘JSONKit’, ‘~&gt; 1.5pre’（删除该行）</li>
-<li>pod ‘MBProgressHUD’, ‘~&gt; 0.8’</li>
-<li>（如果想换成1.1版本，将被删除的行改成pod ‘JSONKit-NoWarning’, ‘~&gt; 1.1’即可）</li>
-</ul>
-</li>
-<li>cd到当前项目目录下，重新执行pod install命令。输出信息如下（留意Removing JSONKit）：<ul>
-<li>$ pod install<br>Analyzing dependencies<br>Removing JSONKit<br>Downloading dependencies<br>Using AFNetworking (2.1.0)<br>Using MBProgressHUD (0.8)<br>Generating Pods project<br>Integrating client project</li>
-</ul>
-</li>
-</ol>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CocoaPods/">CocoaPods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XCode/">XCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-上下文绘图，滤镜简单使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/上下文绘图，滤镜简单使用/" class="article-date">
-      <time datetime="2017-05-03T04:41:39.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/上下文绘图，滤镜简单使用/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/上下文绘图，滤镜简单使用/">
+                <h2 class="article-title">上下文绘图，滤镜简单使用</h2>
+            </a>
+            
+            <p class="article-content">
+                一、drawRect绘制功能1.绘制直线1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** （这个方法在loadView、viewDidLoad方法后执行） */- (void)drawRect:(CGRect)rect &#123;        /** 1.获取上下文 */    CGContextRef context = UIGraphicsGetCurrentContext();        /** 2.创建路径对象 */    CGMutablePathRef path = CGPathCreateMutable();    CGPathMoveToPoint(path, nil, 20, 50);/** 移动到指定位置(...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS，CGContextRef
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="上下文绘图，滤镜简单使用"
+              data-leadcloud-url="/2017/05/03/上下文绘图，滤镜简单使用/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/上下文绘图，滤镜简单使用/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/上下文绘图，滤镜简单使用/">上下文绘图，滤镜简单使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="一、drawRect绘制功能"><a href="#一、drawRect绘制功能" class="headerlink" title="一、drawRect绘制功能"></a>一、drawRect绘制功能</h1><h3 id="1-绘制直线"><a href="#1-绘制直线" class="headerlink" title="1.绘制直线"></a>1.绘制直线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/** （这个方法在loadView、viewDidLoad方法后执行） */</div><div class="line">- (void)drawRect:(CGRect)rect &#123;</div><div class="line">    </div><div class="line">    /** 1.获取上下文 */</div><div class="line">    CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">    </div><div class="line">    /** 2.创建路径对象 */</div><div class="line">    CGMutablePathRef path = CGPathCreateMutable();</div><div class="line">    CGPathMoveToPoint(path, nil, 20, 50);/** 移动到指定位置(设置路径起点) */</div><div class="line">    CGPathAddLineToPoint(path, nil, 20, 100);/** 绘制一个直线(从起始位置开始) */</div><div class="line">    CGPathAddLineToPoint(path, nil, 300, 100);/** 绘制另外一条直线，从上一条的终点开始 */</div><div class="line">    </div><div class="line">    /** 3.添加路径到上下文 */</div><div class="line">    CGContextAddPath(context, path);</div><div class="line">    </div><div class="line">    /** 4.设置推行上下文属性 */</div><div class="line">    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1);/** 设置触笔的颜色 */</div><div class="line">    CGContextSetRGBFillColor(context, 1.0, 0, 0, 1);/** 设置填充颜色 */</div><div class="line">    CGContextSetLineWidth(context, 2.0);/** 设置线条宽度 */</div><div class="line">    CGContextSetLineCap(context, kCGLineCapRound);/** 设置顶点样式,（20,50）和（300,100）是顶点 */</div><div class="line">    CGContextSetLineJoin(context, kCGLineJoinRound);/** 设置连接点样式，(20,100)是连接点 */</div><div class="line">    </div><div class="line">    /* 设置线段样式</div><div class="line">     phase:虚线开始的位置 </div><div class="line">     lengths:虚线长度间隔（例如下面的定义说明第一条线段长度8，然后间隔3重新绘制8点的长度线段，当然这个数组可以定义更多元素） </div><div class="line">     count:虚线数组元素个数 </div><div class="line">     */</div><div class="line">    </div><div class="line">    CGFloat lengths[2] = &#123; 18, 9 &#125;;</div><div class="line">    CGContextSetLineDash(context, 0, lengths, 2);</div><div class="line">    </div><div class="line">    /* 设置阴影</div><div class="line">     context:图形上下文 </div><div class="line">     offset:偏移量 blur:模糊度 </div><div class="line">     color:阴影颜色 </div><div class="line">     */</div><div class="line">    CGColorRef color = [UIColor grayColor].CGColor;//颜色转化，由于Quartz 2D跨平台，所以其中不能使用UIKit中的对象，但是UIkit提供了转化方法</div><div class="line">    CGContextSetShadowWithColor(context, CGSizeMake(2, 2), 0.8, color);</div><div class="line">    </div><div class="line">    /** 5.绘制图像到指定图形上下文 */</div><div class="line">    /*CGPathDrawingMode是填充方式,枚举类型 </div><div class="line">     kCGPathFill:只有填充（非零缠绕数填充），不绘制边框 </div><div class="line">     kCGPathEOFill:奇偶规则填充（多条路径交叉时，奇数交叉填充，偶交叉不填充） </div><div class="line">     kCGPathStroke:只有边框 </div><div class="line">     kCGPathFillStroke：既有边框又有填充 </div><div class="line">     kCGPathEOFillStroke：奇偶填充并绘制边框 */</div><div class="line">    </div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);//最后一个参数是填充类型</div><div class="line">    </div><div class="line">    </div><div class="line">    /** 6.释放对象 */</div><div class="line">    CGPathRelease(path);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="精简绘制直线"><a href="#精简绘制直线" class="headerlink" title="精简绘制直线"></a>精简绘制直线</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">- (void)drawLine2 &#123;</div><div class="line">    //1.获得图形上下文</div><div class="line">    CGContextRef context=UIGraphicsGetCurrentContext();</div><div class="line">    //2.绘制路径（相当于前面创建路径并添加路径到图形上下文两步操作）</div><div class="line">    CGContextMoveToPoint(context, 20, 50);</div><div class="line">    CGContextAddLineToPoint(context, 20, 100);</div><div class="line">    CGContextAddLineToPoint(context, 300, 100);</div><div class="line">    </div><div class="line">    //封闭路径:a.创建一条起点和终点的线,不推荐</div><div class="line">    //CGPathAddLineToPoint(path, nil, 20, 50);</div><div class="line">    //封闭路径:b.直接调用路径封闭方法</div><div class="line">    CGContextClosePath(context);</div><div class="line">    //3.设置图形上下文属性</div><div class="line">    [[UIColor redColor]setStroke];//设置红色边框</div><div class="line">    [[UIColor greenColor]setFill];//设置绿色填充</div><div class="line">    //[[UIColor blueColor]set];//同时设置填充和边框色</div><div class="line">    </div><div class="line">    //4.绘制路径</div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="2-绘制椭圆"><a href="#2-绘制椭圆" class="headerlink" title="2. 绘制椭圆"></a>2. 绘制椭圆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#pragma mark - 绘制椭圆</div><div class="line">-(void)drawEllipse:(CGContextRef)context &#123;</div><div class="line">    </div><div class="line">    //添加对象,绘制椭圆（圆形）的过程也是先创建一个矩形</div><div class="line">    </div><div class="line">    CGRect rect = CGRectMake(50, 50, 220.0, 200.0);</div><div class="line">    CGContextAddEllipseInRect(context, rect); //设置属性</div><div class="line">    [[UIColor purpleColor]set]; //绘制</div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3-绘制弧形"><a href="#3-绘制弧形" class="headerlink" title="3. 绘制弧形"></a>3. 绘制弧形</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#pragma mark 绘制弧形</div><div class="line">-(void)drawArc:(CGContextRef)context&#123;</div><div class="line">    /*添加弧形对象 x:中心点x坐标 y:中心点y坐标 radius:半径 startAngle:起始弧度 endAngle:终止弧度 closewise:是否逆时针绘制，0则顺时针绘制 */</div><div class="line">    CGContextAddArc(context, 160, 160, 100.0, 0.0, M_PI_2, 1);</div><div class="line">    //设置属性</div><div class="line">    [[UIColor yellowColor]set];</div><div class="line">    //绘制</div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4-绘制贝塞尔曲线"><a href="#4-绘制贝塞尔曲线" class="headerlink" title="4. 绘制贝塞尔曲线"></a>4. 绘制贝塞尔曲线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#pragma mark 绘制贝塞尔曲线 </div><div class="line">-(void)drawCurve:(CGContextRef)context &#123;</div><div class="line">    </div><div class="line">    //绘制曲线</div><div class="line">    CGContextMoveToPoint(context, 20, 100);</div><div class="line">    //移动到起始位置</div><div class="line">    </div><div class="line">    /*绘制二次贝塞尔曲线 c:图形上下文 cpx:控制点x坐标 cpy:控制点y坐标 x:结束点x坐标 y:结束点y坐标 */</div><div class="line">    CGContextAddQuadCurveToPoint(context, 160, 0, 300, 100);</div><div class="line">    CGContextMoveToPoint(context, 20, 500);</div><div class="line">    </div><div class="line">    /*绘制三次贝塞尔曲线 c:图形上下文 cp1x:第一个控制点x坐标 cp1y:第一个控制点y坐标 cp2x:第二个控制点x坐标 cp2y:第二个控制点y坐标 x:结束点x坐标 y:结束点y坐标 */</div><div class="line">    CGContextAddCurveToPoint(context, 80, 300, 240, 500, 300, 300);</div><div class="line">    //设置图形上下文属性</div><div class="line">    [[UIColor yellowColor]setFill];</div><div class="line">    [[UIColor redColor]setStroke];</div><div class="line">    //绘制路径</div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-绘制文字"><a href="#5-绘制文字" class="headerlink" title="5. 绘制文字"></a>5. 绘制文字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-(void)drawText:(CGContextRef)context &#123;</div><div class="line">    //绘制到指定的区域内容</div><div class="line">    NSString *str=@&quot;Star Walk is the most beautiful stargazing app you’ve ever seen on a mobile device. It will become your go-to interactive astro guide to the night sky, following your every movement in real-time and allowing you to explore over 200, 000 celestial bodies with extensive information about stars and constellations that you find.&quot;;</div><div class="line"></div><div class="line">    CGRect rect= CGRectMake(20, 50, 280, 300);</div><div class="line">    UIFont *font=[UIFont systemFontOfSize:18];//设置字体</div><div class="line">    UIColor *color=[UIColor redColor];//字体颜色</div><div class="line">    NSMutableParagraphStyle *style=[[NSMutableParagraphStyle alloc]init];//段落样式</div><div class="line">    NSTextAlignment align=NSTextAlignmentLeft;//对齐方式</div><div class="line">    style.alignment = align;</div><div class="line"></div><div class="line">    [str drawInRect:rect withAttributes:@&#123;NSFontAttributeName:font,NSForegroundColorAttributeName:color,NSParagraphStyleAttributeName:style&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="6-图像绘制"><a href="#6-图像绘制" class="headerlink" title="6.图像绘制"></a>6.图像绘制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#pragma mark - 图像绘制</div><div class="line">-(void)drawImage:(CGContextRef)context &#123;</div><div class="line">    UIImage *image=[UIImage imageNamed:@&quot;image2.jpg&quot;];</div><div class="line">    //从某一点开始绘制</div><div class="line">    [image drawAtPoint:CGPointMake(10, 50)]; //绘制到指定的矩形中，注意如果大小不合适会会进行拉伸</div><div class="line">    //[image drawInRect:CGRectMake(10, 50, 300, 450)]; //平铺绘制</div><div class="line">    //[image drawAsPatternInRect:CGRectMake(0, 0, 320, 568)];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="二、绘制渐变视图"><a href="#二、绘制渐变视图" class="headerlink" title="二、绘制渐变视图"></a>二、绘制渐变视图</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div></pre></td><td class="code"><pre><div class="line">#import &quot;ShadeView.h&quot;</div><div class="line">#define TILE_SIZE 20</div><div class="line">@implementation ShadeView</div><div class="line"></div><div class="line">-(void)drawRect:(CGRect)rect &#123;</div><div class="line">    CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">//     [self drawLinearGradient:context];</div><div class="line">//    [self drawRadialGradient:context];</div><div class="line">//    [self drawBackgroundWithColoredPattern:context];</div><div class="line">    [self drawImage2:context];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 线性渐变 </div><div class="line">-(void)drawLinearGradient:(CGContextRef)context &#123;</div><div class="line">    //使用rgb颜色空间</div><div class="line">    CGColorSpaceRef colorSpace=CGColorSpaceCreateDeviceRGB();</div><div class="line">    </div><div class="line">    /*指定渐变色 </div><div class="line">     space:颜色空间 </div><div class="line">     components:颜色数组,注意由于指定了RGB颜色空间，那么四个数组元素表示一个颜色（red、green、blue、alpha）， 如果有三个颜色则这个数组有4*3个元素 </div><div class="line">     locations:颜色所在位置（范围0~1），这个数组的个数不小于components中存放颜色的个数 </div><div class="line">     count:渐变个数，等于locations的个数 </div><div class="line">     */</div><div class="line">    CGFloat compoents[12] = &#123; 248.0/255.0, 86.0/255.0, 86.0/255.0, 1, 249.0/255.0, 127.0/255.0, 127.0/255.0, 1, 1.0,1.0,1.0,1.0 &#125;;</div><div class="line">    CGFloat locations[3] = &#123;0, 0.3, 1.0&#125;;</div><div class="line">    CGGradientRef gradient= CGGradientCreateWithColorComponents(colorSpace, compoents, locations, 3);</div><div class="line">    </div><div class="line">    /* 绘制线性渐变</div><div class="line">     context:图形上下文 </div><div class="line">     gradient:渐变色 </div><div class="line">     startPoint:起始位置</div><div class="line">     endPoint:终止位置</div><div class="line">     options:绘制方式,kCGGradientDrawsBeforeStartLocation 开始位置之前就进行绘制，到结束位置之后不再绘制， kCGGradientDrawsAfterEndLocation开始位置之前不进行绘制，到结束点之后继续填充 */</div><div class="line">    CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(320, 300), kCGGradientDrawsBeforeStartLocation);</div><div class="line">    //释放颜色空间</div><div class="line">    CGColorSpaceRelease(colorSpace);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 径向渐变</div><div class="line">- (void)drawRadialGradient:(CGContextRef)context &#123;</div><div class="line">    </div><div class="line">    //使用rgb颜色空间</div><div class="line">    CGColorSpaceRef colorSpace=CGColorSpaceCreateDeviceRGB();</div><div class="line">    </div><div class="line">    /*指定渐变色 </div><div class="line">     space:颜色空间 </div><div class="line">     components:颜色数组,注意由于指定了RGB颜色空间，那么四个数组元素表示一个颜色（red、green、blue、alpha）， 如果有三个颜色则这个数组有4*3个元素 </div><div class="line">     locations:颜色所在位置（范围0~1），这个数组的个数不小于components中存放颜色的个数 </div><div class="line">     count:渐变个数，等于locations的个数 */</div><div class="line"></div><div class="line">    CGFloat compoents[12] = &#123;</div><div class="line">        248.0/255.0,86.0/255.0,86.0/255.0,1,</div><div class="line">        249.0/255.0,127.0/255.0,127.0/255.0,1,</div><div class="line">        1.0,1.0,1.0,1.0</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    CGFloat locations[3]=&#123;0,0.3,1.0</div><div class="line">        &#125;;</div><div class="line">    CGGradientRef gradient= CGGradientCreateWithColorComponents(colorSpace, compoents, locations, 3);</div><div class="line">    </div><div class="line">    /*绘制径向渐变 </div><div class="line">     context:图形上下文</div><div class="line">     gradient:渐变色 </div><div class="line">     startCenter:起始点位置 </div><div class="line">     startRadius:起始半径（通常为0，否则在此半径范围内容无任何填充） </div><div class="line">     endCenter:终点位置（通常和起始点相同，否则会有偏移） </div><div class="line">     endRadius:终点半径（也就是渐变的扩散长度） </div><div class="line">     options:绘制方式,kCGGradientDrawsBeforeStartLocation 开始位置之前就进行绘制，但是到结束位置之后不再绘制， kCGGradientDrawsAfterEndLocation开始位置之前不进行绘制，但到结束点之后继续填充 */</div><div class="line">    CGContextDrawRadialGradient(context, gradient, CGPointMake(160, 284),0, CGPointMake(165, 289), 150, kCGGradientDrawsAfterEndLocation);</div><div class="line">    //释放颜色空间</div><div class="line">    CGColorSpaceRelease(colorSpace);</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 裁切矩形填充渐变色</div><div class="line">-(void)drawRectWithLinearGradientFill:(CGContextRef)context &#123;</div><div class="line">    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();</div><div class="line">    //裁切处一块矩形用于显示，注意必须先裁切再调用渐变</div><div class="line">    //CGContextClipToRect(context, CGRectMake(20, 50, 280, 300)); //裁切还可以使用UIKit中对应的方法</div><div class="line">    UIRectClip(CGRectMake(20, 50, 280, 300));</div><div class="line">    CGFloat compoents[12]=&#123; 248.0/255.0,86.0/255.0,86.0/255.0,1, 249.0/255.0,127.0/255.0,127.0/255.0,1, 1.0,1.0,1.0,1.0 &#125;;</div><div class="line">    CGFloat locations[3]=&#123;0,0.3,1.0&#125;;</div><div class="line">    CGGradientRef gradient= CGGradientCreateWithColorComponents(colorSpace, compoents, locations, 3);</div><div class="line">    CGContextDrawLinearGradient(context, gradient, CGPointMake(20, 50), CGPointMake(300, 300), kCGGradientDrawsAfterEndLocation);</div><div class="line">    //释放颜色空间</div><div class="line">    CGColorSpaceRelease(colorSpace);</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 颜色叠加</div><div class="line">/** 使用Quartz 2D绘图时后面绘制的图像会覆盖前面的，默认情况下如果前面的被覆盖后将看不到后面的内容，但是有时候这个结果并不是我们想要的，因此在Quartz 2D中提供了填充模式供开发者配置调整。由于填充模式类别特别多，因此下面以一个例子来说明： */</div><div class="line">-(void)drawRectByUIKitWithContext2:(CGContextRef)context &#123;</div><div class="line">    </div><div class="line">    CGRect rect= CGRectMake(0, 130.0, 320.0, 50.0);</div><div class="line">    CGRect rect1= CGRectMake(0, 390.0, 320.0, 50.0);</div><div class="line">    CGRect rect2=CGRectMake(20, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect3=CGRectMake(40.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect4=CGRectMake(60.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect5=CGRectMake(80.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect6=CGRectMake(100.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect7=CGRectMake(120.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect8=CGRectMake(140.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect9=CGRectMake(160.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect10=CGRectMake(180.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect11=CGRectMake(200.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect12=CGRectMake(220.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect13=CGRectMake(240.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect14=CGRectMake(260.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect15=CGRectMake(280.0, 50.0, 10.0, 250.0);</div><div class="line">    CGRect rect16=CGRectMake(30.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect17=CGRectMake(50.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect18=CGRectMake(70.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect19=CGRectMake(90.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect20=CGRectMake(110.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect21=CGRectMake(130.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect22=CGRectMake(150.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect23=CGRectMake(170.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect24=CGRectMake(190.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect25=CGRectMake(210.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect26=CGRectMake(230.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect27=CGRectMake(250.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect28=CGRectMake(270.0, 310.0, 10.0, 250.0);</div><div class="line">    CGRect rect29=CGRectMake(290.0, 310.0, 10.0, 250.0);</div><div class="line">    </div><div class="line">    [[UIColor yellowColor]set]; UIRectFill(rect);</div><div class="line">    [[UIColor greenColor]setFill]; UIRectFill(rect1);</div><div class="line">    [[UIColor redColor]setFill];</div><div class="line">    UIRectFillUsingBlendMode(rect2, kCGBlendModeClear);</div><div class="line">    UIRectFillUsingBlendMode(rect3, kCGBlendModeColor);</div><div class="line">    UIRectFillUsingBlendMode(rect4, kCGBlendModeColorBurn);</div><div class="line">    UIRectFillUsingBlendMode(rect5, kCGBlendModeColorDodge);</div><div class="line">    UIRectFillUsingBlendMode(rect6, kCGBlendModeCopy);</div><div class="line">    UIRectFillUsingBlendMode(rect7, kCGBlendModeDarken);</div><div class="line">    UIRectFillUsingBlendMode(rect8, kCGBlendModeDestinationAtop);</div><div class="line">    UIRectFillUsingBlendMode(rect9, kCGBlendModeDestinationIn);</div><div class="line">    UIRectFillUsingBlendMode(rect10, kCGBlendModeDestinationOut);</div><div class="line">    UIRectFillUsingBlendMode(rect11, kCGBlendModeDestinationOver);</div><div class="line">    UIRectFillUsingBlendMode(rect12, kCGBlendModeDifference);</div><div class="line">    UIRectFillUsingBlendMode(rect13, kCGBlendModeExclusion);</div><div class="line">    UIRectFillUsingBlendMode(rect14, kCGBlendModeHardLight);</div><div class="line">    UIRectFillUsingBlendMode(rect15, kCGBlendModeHue);</div><div class="line">    UIRectFillUsingBlendMode(rect16, kCGBlendModeLighten);</div><div class="line">    UIRectFillUsingBlendMode(rect17, kCGBlendModeLuminosity);</div><div class="line">    UIRectFillUsingBlendMode(rect18, kCGBlendModeMultiply);</div><div class="line">    UIRectFillUsingBlendMode(rect19, kCGBlendModeNormal);</div><div class="line">    UIRectFillUsingBlendMode(rect20, kCGBlendModeOverlay);</div><div class="line">    UIRectFillUsingBlendMode(rect21, kCGBlendModePlusDarker);</div><div class="line">    UIRectFillUsingBlendMode(rect22, kCGBlendModePlusLighter);</div><div class="line">    UIRectFillUsingBlendMode(rect23, kCGBlendModeSaturation);</div><div class="line">    UIRectFillUsingBlendMode(rect24, kCGBlendModeScreen);</div><div class="line">    UIRectFillUsingBlendMode(rect25, kCGBlendModeSoftLight);</div><div class="line">    UIRectFillUsingBlendMode(rect26, kCGBlendModeSourceAtop);</div><div class="line">    UIRectFillUsingBlendMode(rect27, kCGBlendModeSourceIn);</div><div class="line">    UIRectFillUsingBlendMode(rect28, kCGBlendModeSourceOut);</div><div class="line">    UIRectFillUsingBlendMode(rect29, kCGBlendModeXOR);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 瓷砖填充</div><div class="line"></div><div class="line">#pragma mark - 有颜色填充模式 </div><div class="line">void drawColoredTile(void *info,CGContextRef context) &#123;</div><div class="line">    </div><div class="line">    //有颜色填充，这里设置填充色</div><div class="line">    CGContextSetRGBFillColor(context, 254.0/255.0, 52.0/255.0, 90.0/255.0, 1);</div><div class="line">    CGContextFillRect(context, CGRectMake(0, 0, TILE_SIZE, TILE_SIZE));</div><div class="line">    CGContextFillRect(context, CGRectMake(TILE_SIZE, TILE_SIZE, TILE_SIZE, TILE_SIZE));</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(void)drawBackgroundWithColoredPattern:(CGContextRef)context &#123;</div><div class="line">    //设备无关的颜色空间 //</div><div class="line">    CGColorSpaceRef rgbSpace= CGColorSpaceCreateDeviceRGB();</div><div class="line">    </div><div class="line">    //模式填充颜色空间,注意对于有颜色填充模式，这里传NULL</div><div class="line">    CGColorSpaceRef colorSpace=CGColorSpaceCreatePattern(NULL);</div><div class="line">    </div><div class="line">    //将填充色颜色空间设置为模式填充的颜色空间</div><div class="line">    CGContextSetFillColorSpace(context, colorSpace);</div><div class="line">    </div><div class="line">    //填充模式回调函数结构体</div><div class="line">    CGPatternCallbacks callback=&#123;0,&amp;drawColoredTile,NULL&#125;;</div><div class="line">    </div><div class="line">    /*填充模式 </div><div class="line">     info://传递给callback的参数 </div><div class="line">     bounds:瓷砖大小 matrix:形变</div><div class="line">     xStep:瓷砖横向间距</div><div class="line">     yStep:瓷砖纵向间距</div><div class="line">     tiling:贴砖的方法 </div><div class="line">     isClored:绘制的瓷砖是否已经指定了颜色(对于有颜色瓷砖此处指定位true) </div><div class="line">     callbacks:回调函数 </div><div class="line">     */</div><div class="line">    </div><div class="line">    CGPatternRef pattern=CGPatternCreate(NULL, CGRectMake(0, 0, 2*TILE_SIZE, 2*TILE_SIZE), CGAffineTransformIdentity,2*TILE_SIZE+ 5,2*TILE_SIZE+ 5, kCGPatternTilingNoDistortion, true, &amp;callback); CGFloat alpha=1;</div><div class="line">    </div><div class="line">    //注意最后一个参数对于有颜色瓷砖指定为透明度的参数地址，对于无颜色瓷砖则指定当前颜色空间对应的颜色数组</div><div class="line">    </div><div class="line">    CGContextSetFillPattern(context, pattern, &amp;alpha);</div><div class="line">    UIRectFill(CGRectMake(0, 0, 320, 568));</div><div class="line">    </div><div class="line">    // CGColorSpaceRelease(rgbSpace);</div><div class="line">    CGColorSpaceRelease(colorSpace);</div><div class="line">    CGPatternRelease(pattern);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 无颜色填充模式 </div><div class="line">//填充瓷砖的回调函数（必须满足CGPatternCallbacks签名）</div><div class="line"></div><div class="line">void drawTile(void *info,CGContextRef context) &#123;</div><div class="line">    </div><div class="line">    CGContextFillRect(context, CGRectMake(0, 0, TILE_SIZE, TILE_SIZE)); CGContextFillRect(context, CGRectMake(TILE_SIZE, TILE_SIZE, TILE_SIZE, TILE_SIZE));</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)drawBackgroundWithPattern:(CGContextRef)context &#123;</div><div class="line">    </div><div class="line">    //设备无关的颜色空间</div><div class="line">    CGColorSpaceRef rgbSpace= CGColorSpaceCreateDeviceRGB();</div><div class="line">    </div><div class="line">    //模式填充颜色空间</div><div class="line">    CGColorSpaceRef colorSpace=CGColorSpaceCreatePattern(rgbSpace);</div><div class="line">    //将填充色颜色空间设置为模式填充的颜色空间</div><div class="line">    CGContextSetFillColorSpace(context, colorSpace);</div><div class="line">    //填充模式回调函数结构体</div><div class="line">    CGPatternCallbacks callback=&#123;0,&amp;drawTile,NULL&#125;;</div><div class="line">    </div><div class="line">    /*填充模式 </div><div class="line">     info://传递给callback的参数</div><div class="line">     bounds:瓷砖大小 </div><div class="line">     matrix:形变 </div><div class="line">     xStep:瓷砖横向间距 </div><div class="line">     yStep:瓷砖纵向间距 </div><div class="line">     tiling:贴砖的方法（瓷砖摆放的方式）</div><div class="line">     isClored:绘制的瓷砖是否已经指定了颜色（对于无颜色瓷砖此处指定位false） </div><div class="line">     callbacks:回调函数 */</div><div class="line">    CGPatternRef pattern = CGPatternCreate(NULL, CGRectMake(0, 0, 2*TILE_SIZE, 2*TILE_SIZE), CGAffineTransformIdentity,2*TILE_SIZE+ 5,2*TILE_SIZE+ 5, kCGPatternTilingNoDistortion, false, &amp;callback);</div><div class="line">    CGFloat components[]=&#123;254.0/255.0,52.0/255.0,90.0/255.0,1.0&#125;;</div><div class="line">    </div><div class="line">    </div><div class="line">    //注意最后一个参数对于无颜色填充模式指定为当前颜色空间颜色数据</div><div class="line">    CGContextSetFillPattern(context, pattern, components);</div><div class="line">    // CGContextSetStrokePattern(context, pattern, components);</div><div class="line">    </div><div class="line">    UIRectFill(CGRectMake(0, 0, 320, 568));</div><div class="line">    CGColorSpaceRelease(rgbSpace);</div><div class="line">    CGColorSpaceRelease(colorSpace);</div><div class="line">    CGPatternRelease(pattern);</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 图形上下文形变 </div><div class="line">-(void)drawImage:(CGContextRef)context &#123;</div><div class="line">    //保存初始状态</div><div class="line">    CGContextSaveGState(context);</div><div class="line">    </div><div class="line">    //形变第一步：图形上下文向右平移40</div><div class="line">    CGContextTranslateCTM(context, 100, 0);</div><div class="line">    </div><div class="line">    //形变第二步：缩放0.8</div><div class="line">    CGContextScaleCTM(context, 0.8, 0.8);</div><div class="line">    </div><div class="line">    //形变第三步：旋转</div><div class="line">    CGContextRotateCTM(context, M_PI_4/4);</div><div class="line">    </div><div class="line">    UIImage *image=[UIImage imageNamed:@&quot;屏幕快照 2016-04-28 上午11.14.29&quot;];</div><div class="line">    [image drawInRect:CGRectMake(0, 50, 240, 300)];</div><div class="line">    </div><div class="line">    //恢复到初始状态</div><div class="line">    CGContextRestoreGState(context);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 内置图片绘制</div><div class="line">-(void)drawImage2:(CGContextRef)context &#123;</div><div class="line">    UIImage *image = [UIImage imageNamed:@&quot;屏幕快照 2016-04-28 上午11.14.29&quot;];</div><div class="line">    //图像绘制</div><div class="line">    CGRect rect= CGRectMake(10, 50, 300, 450);</div><div class="line">    CGContextDrawImage(context, rect, image.CGImage);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="三、滤镜使用"><a href="#三、滤镜使用" class="headerlink" title="三、滤镜使用"></a>三、滤镜使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div></pre></td><td class="code"><pre><div class="line">#import &quot;FilterCoreViewController.h&quot;</div><div class="line">#define CONSTROLPANEL_FONTSIZE 12</div><div class="line"></div><div class="line">@interface FilterCoreViewController () &lt;UINavigationControllerDelegate,UIImagePickerControllerDelegate&gt; &#123;</div><div class="line">    UIImagePickerController *_imagePickerController;//系统照片选择控制器</div><div class="line">    UIImageView *_imageView;//图片显示控件</div><div class="line">    CIContext *_context;//Core Image上下文</div><div class="line">    CIImage *_image;//我们要编辑的图像</div><div class="line">    CIImage *_outputImage;//处理后的图像</div><div class="line">    CIFilter *_colorControlsFilter;//色彩滤镜</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation FilterCoreViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    // Do any additional setup after loading the view.</div><div class="line">    </div><div class="line">    [self initLayout];</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 初始化布局</div><div class="line">-(void)initLayout &#123;</div><div class="line">    //初始化图片选择器</div><div class="line">    _imagePickerController=[[UIImagePickerController alloc]init];</div><div class="line">    _imagePickerController.delegate =self;</div><div class="line">    </div><div class="line">    //创建图片显示控件</div><div class="line">    _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 64, 320, 502)];</div><div class="line">    _imageView.contentMode=UIViewContentModeScaleAspectFit;</div><div class="line">    [self.view addSubview:_imageView];</div><div class="line">    </div><div class="line">    //上方导航按钮</div><div class="line">    self.navigationItem.title = @&quot;Enhance&quot;;</div><div class="line">    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@&quot;Open&quot; style:UIBarButtonItemStyleDone target:self action:@selector(openPhoto:)];</div><div class="line">    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@&quot;Save&quot; style:UIBarButtonItemStyleDone target:self action:@selector(savePhoto:)];</div><div class="line">    </div><div class="line">    </div><div class="line">    //下方控制面板</div><div class="line">    UIView *controlView=[[UIView alloc]initWithFrame:CGRectMake(0, 450, 320, 118)];</div><div class="line">    //    controlView.alpha=0.2;</div><div class="line">    //    controlView.backgroundColor=[UIColor colorWithRed:46.0/255.0 green:178.0/255.0 blue:235.0/255.0 alpha:1];</div><div class="line">    [self.view addSubview:controlView];</div><div class="line">    //饱和度(默认为1，大于饱和度增加小于1则降低)</div><div class="line">    UILabel *lbSaturation=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 60, 25)];</div><div class="line">    lbSaturation.text=@&quot;Saturation&quot;;</div><div class="line">    lbSaturation.font=[UIFont systemFontOfSize:CONSTROLPANEL_FONTSIZE];</div><div class="line">    [controlView addSubview:lbSaturation];</div><div class="line">    UISlider *sldStaturation=[[UISlider alloc]initWithFrame:CGRectMake(80, 10, 230, 30)];//注意UISlider高度虽然无法调整，很多朋友会说高度设置位0即可，事实上在iOS7中设置为0后是无法拖动的</div><div class="line">    [controlView addSubview:sldStaturation];</div><div class="line">    sldStaturation.minimumValue=0;</div><div class="line">    sldStaturation.maximumValue=2;</div><div class="line">    sldStaturation.value=1;</div><div class="line">    [sldStaturation addTarget:self action:@selector(changeStaturation:) forControlEvents:UIControlEventValueChanged];</div><div class="line">    //亮度(默认为0)</div><div class="line">    UILabel *lbBrightness=[[UILabel alloc]initWithFrame:CGRectMake(10, 40, 60, 25)];</div><div class="line">    lbBrightness.text=@&quot;Brightness&quot;;</div><div class="line">    lbBrightness.font=[UIFont systemFontOfSize:CONSTROLPANEL_FONTSIZE];</div><div class="line">    [controlView addSubview:lbBrightness];</div><div class="line">    UISlider *sldBrightness=[[UISlider alloc]initWithFrame:CGRectMake(80, 40, 230, 30)];</div><div class="line">    [controlView addSubview:sldBrightness];</div><div class="line">    sldBrightness.minimumValue=-1;</div><div class="line">    sldBrightness.maximumValue=1;</div><div class="line">    sldBrightness.value=0;</div><div class="line">    [sldBrightness addTarget:self action:@selector(changeBrightness:) forControlEvents:UIControlEventValueChanged];</div><div class="line">    //对比度(默认为1)</div><div class="line">    UILabel *lbContrast=[[UILabel alloc]initWithFrame:CGRectMake(10, 70, 60, 25)];</div><div class="line">    lbContrast.text=@&quot;Contrast&quot;;</div><div class="line">    lbContrast.font=[UIFont systemFontOfSize:CONSTROLPANEL_FONTSIZE];</div><div class="line">    [controlView addSubview:lbContrast];</div><div class="line">    UISlider *sldContrast=[[UISlider alloc]initWithFrame:CGRectMake(80, 70, 230, 30)];</div><div class="line">    [controlView addSubview:sldContrast];</div><div class="line">    sldContrast.minimumValue=0;</div><div class="line">    sldContrast.maximumValue=2;</div><div class="line">    sldContrast.value=1;</div><div class="line">    [sldContrast addTarget:self action:@selector(changeContrast:) forControlEvents:UIControlEventValueChanged];</div><div class="line">    </div><div class="line">    </div><div class="line">    //初始化CIContext</div><div class="line">    //创建基于CPU的图像上下文</div><div class="line">    //    NSNumber *number=[NSNumber numberWithBool:YES];</div><div class="line">    //    NSDictionary *option=[NSDictionary dictionaryWithObject:number forKey:kCIContextUseSoftwareRenderer];</div><div class="line">    //    _context=[CIContext contextWithOptions:option];</div><div class="line">    _context=[CIContext contextWithOptions:nil];//使用GPU渲染，推荐,但注意GPU的CIContext无法跨应用访问，例如直接在UIImagePickerController的完成方法中调用上下文处理就会自动降级为CPU渲染，所以推荐现在完成方法中保存图像，然后在主程序中调用</div><div class="line">    //    EAGLContext *eaglContext=[[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES1];</div><div class="line">    //    _context=[CIContext contextWithEAGLContext:eaglContext];//OpenGL优化过的图像上下文</div><div class="line">    </div><div class="line">    //取得滤镜</div><div class="line">    _colorControlsFilter=[CIFilter filterWithName:@&quot;CIColorControls&quot;];</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 打开图片选择器</div><div class="line">-(void)openPhoto:(UIBarButtonItem *)btn&#123;</div><div class="line">    //打开图片选择器</div><div class="line">    [self presentViewController:_imagePickerController animated:YES completion:nil];</div><div class="line">&#125;</div><div class="line">#pragma mark 保存图片</div><div class="line">-(void)savePhoto:(UIBarButtonItem *)btn&#123;</div><div class="line">    //保存照片到相册</div><div class="line">    UIImageWriteToSavedPhotosAlbum(_imageView.image, nil, nil, nil);</div><div class="line">    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@&quot;Sytem Info&quot; message:@&quot;Save Success!&quot; delegate:nil cancelButtonTitle:nil otherButtonTitles:@&quot;OK&quot;, nil];</div><div class="line">    [alert show];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 图片选择器选择图片代理方法</div><div class="line">-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info&#123;</div><div class="line">    //关闭图片选择器</div><div class="line">    [self dismissViewControllerAnimated:YES completion:nil];</div><div class="line">    //取得选择图片</div><div class="line">    UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];</div><div class="line">    _imageView.image = selectedImage;</div><div class="line">    //初始化CIImage源图像</div><div class="line">    _image = [CIImage imageWithCGImage:selectedImage.CGImage];</div><div class="line">    [_colorControlsFilter setValue:_image forKey:@&quot;inputImage&quot;];//设置滤镜的输入图片</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 将输出图片设置到UIImageView</div><div class="line">-(void)setImage &#123;</div><div class="line">    CIImage *outputImage = [_colorControlsFilter outputImage];//取得输出图像</div><div class="line">    CGImageRef temp = [_context createCGImage:outputImage fromRect:[outputImage extent]];</div><div class="line">    _imageView.image = [UIImage imageWithCGImage:temp];//转化为CGImage显示在界面中</div><div class="line">    </div><div class="line">    CGImageRelease(temp);//释放CGImage对象</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 调整饱和度</div><div class="line">-(void)changeStaturation:(UISlider *)slider&#123;</div><div class="line">    [_colorControlsFilter setValue:[NSNumber numberWithFloat:slider.value] forKey:@&quot;inputSaturation&quot;];//设置滤镜参数</div><div class="line">    [self setImage];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 调整亮度</div><div class="line">-(void)changeBrightness:(UISlider *)slider&#123;</div><div class="line">    [_colorControlsFilter setValue:[NSNumber numberWithFloat:slider.value] forKey:@&quot;inputBrightness&quot;];</div><div class="line">    [self setImage];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark 调整对比度</div><div class="line">-(void)changeContrast:(UISlider *)slider&#123;</div><div class="line">    [_colorControlsFilter setValue:[NSNumber numberWithFloat:slider.value] forKey:@&quot;inputContrast&quot;];</div><div class="line">    [self setImage];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS，CGContextRef/">iOS，CGContextRef</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-视图控制器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/视图控制器/" class="article-date">
-      <time datetime="2017-05-03T04:40:16.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/视图控制器/">
+        <div class="article-img img-ajax" data-src= /img/default-1.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/视图控制器/">
+                <h2 class="article-title">视图控制器</h2>
+            </a>
+            
+            <p class="article-content">
+                ## 视图控制器创建的多种方式
+什么是视图控制器
+视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算
+每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样
+前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示
+
+视图控制器的创建方式
+UIStoryboard的方式
+获取storyboard箭头所指的视图控制器
+获取storyboard标识了ID所指的视图控制器
+
+
+直接创建控制器
+创建带xib的视图控制器
+xib是描述界面长什么样的
+调用控制器的【-(instancetype)initWithNibName:bundle:】;
+方法为什么是nib，因为程序打包运行后，xib会放在bundle目录下，并且后缀名为nib”进入沙盒验证”
+xib的 “File’s Ow...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="视图控制器"
+              data-leadcloud-url="/2017/05/03/视图控制器/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/视图控制器/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/视图控制器/">视图控制器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <pre><code>## 视图控制器创建的多种方式
-</code></pre><h4 id="什么是视图控制器"><a href="#什么是视图控制器" class="headerlink" title="什么是视图控制器"></a>什么是视图控制器</h4><ul>
-<li>视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算</li>
-<li>每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样</li>
-<li>前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示</li>
-</ul>
-<h4 id="视图控制器的创建方式"><a href="#视图控制器的创建方式" class="headerlink" title="视图控制器的创建方式"></a>视图控制器的创建方式</h4><ol>
-<li>UIStoryboard的方式<ul>
-<li>获取storyboard箭头所指的视图控制器</li>
-<li>获取storyboard标识了ID所指的视图控制器</li>
-</ul>
-</li>
-<li>直接创建控制器</li>
-<li>创建带xib的视图控制器<ul>
-<li>xib是描述界面长什么样的</li>
-<li>调用控制器的【-(instancetype)initWithNibName:bundle:】;</li>
-<li>方法为什么是nib，因为程序打包运行后，xib会放在bundle目录下，并且后缀名为nib”进入沙盒验证”</li>
-<li>xib的 “File’s Owner” 是代表界面由谁管理，控制器view对应哪个界面的描述</li>
-</ul>
-</li>
-</ol>
-<h4 id="多控制器"><a href="#多控制器" class="headerlink" title="多控制器"></a>多控制器</h4><ol>
-<li>导航控制器<br>(1)导航控制器是用来管多个子控制器，实现不同界面间的 “来回切换”,系统的界面就是一个导航控制器<br>(2)掌握代码创建导航控制器及设置根控制器<br>(3)掌握如何进入到下一个控制器、返回上一个控制器、返回第一控制器<br>(4)理解导航控制器的view的结构<br>(5)掌握导航控制器显示各个子控制器显示的的原理 //栈顶原理<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">栈顶原理</div><div class="line">0.导航控制器将所要显示的子控制器放到一个栈中</div><div class="line">1.导航控制器显示的第一个控制器为栈顶控制器</div><div class="line">2.返回上一个子控制器时，栈顶控制器的view从导航控制器的view中移除，并栈顶控制器将被销毁</div><div class="line">3.把最新的栈顶控制器的view显示在导航控制器view的上面</div><div class="line">4.所有的子控制器会存储在导航控制器的viewControllers属性中</div><div class="line">*/</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>(6)掌握导航控制器中导航栏左右两边的按钮与标题的设置</p>
-<ul>
-<li>每一个控制器有个navigationItem属性</li>
-<li>使用navigationItem可设置标题</li>
-<li>设置标题还可以使用控制器的title属性</li>
-<li>使用navigationItem还可设置左右两边的按钮</li>
-<li>设置返回按钮，当前控制器设置的返回按钮是给下一个控制器显示的</li>
-<li>navigationItem还有个titleView属性，可添加自己义的标题</li>
-</ul>
-<h4 id="控制器的生命周期"><a href="#控制器的生命周期" class="headerlink" title="控制器的生命周期"></a>控制器的生命周期</h4><p>#####理解控制器的生命周期的几个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">viewDidLoad               //view加载完毕</div><div class="line">viewWillAppear            //view即将显示</div><div class="line">viewDidAppear             //view已经显示</div><div class="line">viewWillDisappear         //view即将消失</div><div class="line">viewDidDisappear          //view已经消失</div><div class="line">viewWillUnload            //view即被卸载</div><div class="line">viewDidUnload             //view已经卸载</div><div class="line">dealloc                   //控制器被销毁</div></pre></td></tr></table></figure></p>
-<h4 id="接收到控制器内存警告"><a href="#接收到控制器内存警告" class="headerlink" title="接收到控制器内存警告"></a>接收到控制器内存警告</h4><ul>
-<li>循问当前哪个view可以卸载，比如当前控制器不在窗口上，就代表不用，就进行卸载view</li>
-<li>当view被卸载完后，清空数据来释放内存给别人用</li>
-<li>在arc环境下清空资源前，会先释放</li>
-</ul>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIStoryboard/">UIStoryboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制器生命周期/">控制器生命周期</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库操作语句" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/数据库操作语句/" class="article-date">
-      <time datetime="2017-05-03T04:38:30.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+    </li>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/数据库操作语句/">数据库操作语句</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="CoreData"><a href="#CoreData" class="headerlink" title="CoreData"></a>CoreData</h2><h4 id="CoreData的使用步骤"><a href="#CoreData的使用步骤" class="headerlink" title="CoreData的使用步骤"></a>CoreData的使用步骤</h4><pre><code>- 创建模型文件
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/数据库操作语句/">
+        <div class="article-img img-ajax" data-src= http://XXXX.example.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/数据库操作语句/">
+                <h2 class="article-title">数据库操作语句</h2>
+            </a>
+            
+            <p class="article-content">
+                CoreDataCoreData的使用步骤- 创建模型文件
 - 添加实体
 - 创建实体类
 - 生成上下文件 关联模型文件生成数据库
@@ -901,266 +556,188 @@ make.bottom.offset(-20);
 - 从数据库获取对象
 - 更新数据
 - 删除数据
-</code></pre><p><strong>数据持久化：是将一个数据保存到文件中，而不是内存中</strong></p>
-<h4 id="CoreData简单用法"><a href="#CoreData简单用法" class="headerlink" title="CoreData简单用法"></a>CoreData简单用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> 1. 创建模型文件</div><div class="line"> 2. 添加实体</div><div class="line"> 3. 创建实体类(就是一张表)</div><div class="line"> 4. 生成上下文件 关联模型文件生成数据库</div><div class="line"> */</div><div class="line"></div><div class="line">- (void)setUpCoreData &#123;</div><div class="line">   /** 关联的时候：如果本地没有这个文件，coreData会自己创建 */</div><div class="line">  /** 生成上下文 */</div><div class="line">  NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];</div><div class="line">  /** 模型文件 */</div><div class="line">  NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];</div><div class="line">  /** 上下文要关联数据库 */</div><div class="line">  /** 持久化调度器 */</div><div class="line">  NSPersistentStoreCoordinator *store = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];</div><div class="line">  /** 告诉CoreData数据库的名字和路径 */</div><div class="line">  NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];</div><div class="line">  NSString *sqlitePath = [doc stringByAppendingString:@&quot;company.sqlite&quot;];</div><div class="line"></div><div class="line">  [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:nil];</div><div class="line"></div><div class="line">  context.persistentStoreCoordinator = store;</div><div class="line"></div><div class="line">  _context = context;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">#pragma mark - 添加</div><div class="line">- (IBAction)addEntity &#123;</div><div class="line">    </div><div class="line">    Entity *enti = [NSEntityDescription insertNewObjectForEntityForName:@&quot;Entity&quot; inManagedObjectContext:_context];</div><div class="line">    enti.name = @&quot;wangwu&quot;;</div><div class="line">    enti.hight = @2.30;</div><div class="line">    </div><div class="line">    NSError *error = nil;</div><div class="line">    [_context save:&amp;error];</div><div class="line">    </div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 读取员工</div><div class="line">- (IBAction)readEntity &#123;</div><div class="line">    </div><div class="line">    /** 1. FetchRequest抓取对象 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 2. 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;wangwu&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    /** 3. 排序 */</div><div class="line">    /** 身高的升序排序 */</div><div class="line">    NSSortDescriptor *heightSort = [NSSortDescriptor sortDescriptorWithKey:@&quot;hight&quot; ascending:YES];</div><div class="line">    request.sortDescriptors = @[heightSort];/*&lt; 数组的条件排序 */</div><div class="line">    </div><div class="line">    </div><div class="line">    /** 4. 执行请求 */</div><div class="line">    NSError *error = nil;</div><div class="line">    NSArray *arr = [_context executeFetchRequest:request error:&amp;error];</div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 遍历数组，读取的内容 */</div><div class="line">    for (Entity *ti in arr) &#123;</div><div class="line">        NSLog(@&quot;%@, %@&quot;, ti.name, ti.hight);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 更新员工</div><div class="line"></div><div class="line">- (IBAction)updateEntity &#123;</div><div class="line">    </div><div class="line">    /** 更改张三  身高两米 */</div><div class="line">    </div><div class="line">    /** 1.查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    /** 执行请求 */</div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 2.更新身高 */</div><div class="line">    for (Entity *en in enti) &#123;</div><div class="line">        en.hight = @2.0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 3.保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 删除</div><div class="line">- (IBAction)delete &#123;</div><div class="line">    </div><div class="line">    /** 找到list */</div><div class="line">    /** .查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 删除 */</div><div class="line">    for (Entity *entity in enti) &#123;</div><div class="line">        [_context deleteObject:entity];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="数据库软件使用中的语句"><a href="#数据库软件使用中的语句" class="headerlink" title="数据库软件使用中的语句"></a>数据库软件使用中的语句</h2><ul>
-<li>DDL：数据定义语句<ul>
-<li>创建表格<ul>
-<li>create table if not exists + 表名 (字段名1 字段类型1，字段名2 字段类型2)</li>
-<li>例子：create table if not exists t_class (id integer primary auto increment, name text);</li>
-</ul>
-</li>
-<li>删除表格<ul>
-<li>drop table if exists + 表名</li>
-<li>DML 数据操作源（增删改查）</li>
-</ul>
-</li>
-<li>插入<ul>
-<li>insert into + 表名 (字段名) values (名)</li>
-<li>INSERT INTO t_class(name) VALUES (‘哈哈哈哈’);</li>
-</ul>
-</li>
-<li>更改<ul>
-<li>update + 表名 set + 字段名 = 字段1的值</li>
-<li>UPDATE t_class SET name = ‘哈哈哈哈’;</li>
-<li>这样的更改是所有的都改</li>
-</ul>
-</li>
-<li>根据条件更改 （where）<ul>
-<li>UPDATE t_student set name = ‘qq’ WHERE age &lt; 10 and id , 50;</li>
-</ul>
-</li>
-<li>删除<ul>
-<li>delete from + 表名</li>
-<li>DELETE FROM t_class;</li>
-</ul>
-</li>
-<li>删除记录，不是删除表<ul>
-<li>DQL语句 用来查询的</li>
-</ul>
-</li>
-<li>查询<ul>
-<li>SELECT name FROM t_class;</li>
-<li>select * from    查询所有字段</li>
-</ul>
-</li>
-<li>查询后排序<ul>
-<li>降序：SELECT * FROM t_student ORDER BY age desc;</li>
-<li>升序：SELECT * FROM t_student ORDER BY age asc;</li>
-</ul>
-</li>
-<li>约束 (建议给字段设定严格的约束，以保证数据的规范性)<ul>
-<li>not null：规定字段的值不能为null</li>
-<li>unique：规定字段的值必须唯一</li>
-<li>default：制定字段的默认值<ul>
-<li>create table t_student (id integer, name text not null unique, age integer not null default 1);</li>
-<li>name字段不能为null，并且唯一</li>
-<li>age字段不能为null，并且默认为1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DDL/">DDL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSSortDescriptor/">NSSortDescriptor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Quart2D 一 线面" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/03/Quart2D 一 线面/" class="article-date">
-      <time datetime="2017-05-03T01:28:23.000Z" itemprop="datePublished">2017-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
+数据持久化：是将一个数据保存到文件中，而不是内存中
+CoreData简单用法123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116/** 1. 创建模型文件 2. ...
+            </p>
+            <div class="article-meta">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/Quart2D 一 线面/">Quart2D 一 简单形状、线</a>
-    </h1>
-  
-
-      </header>
-      
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作
-          
-      
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quart2D/">Quart2D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/05/03/Quart2D 一 线面/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="数据库操作语句"
+              data-leadcloud-url="/2017/05/03/数据库操作语句/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/数据库操作语句/" class="read-article">阅读全文</a>
+    
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2017 王冬尧
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
-            </div>
+
         </div>
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
+    </li>
+    
+    
+    <li  class="article-excerpt-wrap " _href = "/2017/05/03/Quart2D 一 线面/">
+        <div class="article-img img-ajax" data-src= http://XXXX.example.jpg>
+           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
+        </div>
+        <div class="article-excerpt">
+            
+            <a class="article-title-link" href="/2017/05/03/Quart2D 一 线面/">
+                <h2 class="article-title">Quart2D 一 简单形状、线</h2>
+            </a>
+            
+            <p class="article-content">
+                画线123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141#pragma mark - 绘制曲线- (void)drawCurve&#123;    /** 绘制曲线 */        /** 1.获取上下文 */ ...
+            </p>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>iOS</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            iOS
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/05/03</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="Quart2D 一 简单形状、线"
+              data-leadcloud-url="/2017/05/03/Quart2D 一 线面/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+    <a href="/2017/05/03/Quart2D 一 线面/" class="read-article">阅读全文</a>
+    
+</div>
+
+        </div>
+        
+    </li>
+    
+    
+
+</ul>
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
         
     </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">王冬尧</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
 </footer>
 
-    </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
 </div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    
+
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
 </script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
 </script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
+<script src="/js/app.js"></script>
 
 
-  </div>
 </body>
 </html>

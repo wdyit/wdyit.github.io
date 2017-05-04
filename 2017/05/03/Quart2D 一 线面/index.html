@@ -1,239 +1,325 @@
-<!DOCTYPE HTML>
-<html class="no-js" lang="zh-CN">
-<!--
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---'\____
-//                      .   ' \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| ''\---/'' | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .' /--.--\ `. . __
-//                ."" '< `.___\_<|>_/___.' >'"".
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//                 拦截插件累计拦截逗比攻击"1381438"次！
-//         .............................................
-//                  佛祖保佑             永无BUG
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
--->
+<!DOCTYPE html>
+<html>
 <head>
-    <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=http://wdyit.com/warn.html">
-<![endif]-->
-<meta charset="utf-8">
+  <meta charset="utf-8">
+  
+  <title>quart2d 一 简单形状、线 | 码路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="iOSQuart2D" />
+  
+  
+  
+  
+  <meta name="description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+<meta name="keywords" content="iOS,Quart2D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quart2D 一 简单形状、线">
+<meta property="og:url" content="http://wdyit.com/2017/05/03/Quart2D 一 线面/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+<meta property="og:updated_time" content="2017-05-03T04:50:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quart2D 一 简单形状、线">
+<meta name="twitter:description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
 
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta http-equiv="mobile-agent" content="format=html5; url=http://wdyit.com">
-<meta name="author" content="王冬尧">
-<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+  <script src="/js/jquery-3.1.1.min.js"></script>
 
-<link rel="shortcut icon" href="/images/favicon.png">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
 
-
-<title>quart2d 一 简单形状、线 - 码路</title>
-
-<meta name="keywords" content="undefined">
-
-<meta name="description " content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
 </head>
-<body>
-<div id="nav">
-    <nav class="nav-menu">
-        <a class="site-name current" href="/" title="说">说</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
-        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
-        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
-        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
-        <a href="/rss" title="RSS Feed"><i class="fa fa-rss"></i><span>RSS Feed</span></a>
-        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
-    </nav>
-</div>
-<div class="nav-user">
-    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
-    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
-    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
-</div>
-<div id="wrapper" class="clearfix">
-    <div id="body">
-        <div class="main" id="main">
-            <div id="cover">
-    <div class="cover-img"></div>
-    <div class="cover-info">
-        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
-        <h1>说IT</h1>
-        <h3>交流技术，畅谈人文</h3>
-        <p>一个关注技术与人文的IT博客</p>
-        <div class="cover-sns">
-            <div class="btn btn-weixin">
-                <a class="" href="javascript:"><i class="fa fa-weixin"></i></a>
-                <div class="qrcode"><img src="/images/weixin-qrcode.png" alt="weixinQrcode" /></div>
-                <div class="qrcode-arrow"></div>
-            </div>
-            <div class="btn btn-weibo">
-                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
-            </div>
-            <div class="btn btn-facebook">
-                <a href="https://fackbook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
-            </div>
-            <div class="btn btn-github">
-                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="page-title">
-    <ul>
-        <li><a href="/">最新</a></li>
-        
-            
-                <li class="">
-                    <a href="/categories/tech" data-name="技术">技术</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/humanity" data-name="人文">人文</a>
-                </li>
-            
-                <li class="">
-                    <a href="/categories/resource" data-name="资源">资源</a>
-                </li>
-            
-        
-        <li class="page-search">
-    <form id="search" class="search-form">
-        <label for="s" class="sr-only">Input Search key Words Here</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
-        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-</li>
 
-    </ul>
-</div>
-<div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="post-header">
-            <div class="post-author clearfix">
-                <a class="avatar fleft" href="undefined" target="_blank">
-                    <img width="48" src="undefined" alt="avatar"/>
-                </a>
-                <p><span class="label">作者</span>
-                    <a href="undefined" target="_blank">undefined</a>
-                    <span title="最后编辑于2017-05-03">2017-05-03</span>
-                </p>
-                <p>undefined</p>
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" rel="home" >
+                <img style="margin-bottom: 10px;"  width="124px" height="124px" alt="Hike News" src=" //source/css/images/avatar.png">
+              </a>
+            
+          </h1>
+
+          
+            <div class="site-description">一个有梦想的人，start from zero</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
             </div>
-            <h2 class="post-title">Quart2D 一 简单形状、线</h2>
-            <div class="post-meta">
-                本文总共3981个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
-            </div>
-        </div>
-        <div class="post-content markdown-body">
-            <h3 id="画线"><a href="#画线" class="headerlink" title="画线"></a>画线</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 绘制曲线</span></div><div class="line">- (<span class="keyword">void</span>)drawCurve</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 绘制曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 1.获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 一定要有起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddQuadCurveToPoint</span>(ctf, <span class="number">150</span>, <span class="number">20</span>, <span class="number">250</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 线的状态</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * beaier 封装的画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawStateBezier</div><div class="line">&#123;</div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path stroke];</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="built_in">UIBezierPath</span> *path1 = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path1 moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path1 addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path1.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path1 stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawContextRefState</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取图形上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 获取路径 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">50</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 重新设置起点，两根线会分开 */</span></div><div class="line">    <span class="comment">//    CGContextMoveToPoint(ctf, 50, 50);</span></div><div class="line">    <span class="comment">/** 默认上一根线的终点是下一根线的起点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置绘图状态, 一定要在渲染之前 */</span></div><div class="line">    <span class="comment">/** 颜色 */</span></div><div class="line">    [[<span class="built_in">UIColor</span> redColor] setStroke];</div><div class="line">    <span class="comment">/** 线宽 */</span></div><div class="line">    <span class="built_in">CGContextSetLineWidth</span>(ctf, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 设置连接样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineJoin</span>(ctf, kCGLineJoinRound);<span class="comment">/** 圆拐角 */</span></div><div class="line">    <span class="comment">/** 设置顶角样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineCap</span>(ctf, kCGLineCapRound);</div><div class="line">    </div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 画线的三种方式</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * bezier画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawBezierLines</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** UIKit封装了绘图功能 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 贝塞尔曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 添加一个线 */</span></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染 */</span></div><div class="line">    [path stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLine</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 1.获取图形上下文 */</span></div><div class="line">    <span class="comment">/** 目前我们用的上下文都是UIGraphics开头 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctx = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">CGMutablePathRef</span> path = <span class="built_in">CGPathCreateMutable</span>();</div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGPathMoveToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">50</span>, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 添加一根线到莫个点 */</span></div><div class="line">    <span class="built_in">CGPathAddLineToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.路径添加到上下文 */</span></div><div class="line">    <span class="built_in">CGContextAddPath</span>(ctx, path);</div><div class="line">    </div><div class="line">    <span class="comment">/** 4.渲染上下文到view的图层上 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctx);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 省略的系统画线方法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLineSimple</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 描述路径 */</span></div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="comment">/** 设置终点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Quart2D 一 线面" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Quart2D 一 简单形状、线
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/05/03/Quart2D 一 线面/" class="article-date">
+	  <time datetime="2017-05-03T01:28:23.000Z" itemprop="datePublished">五月 3, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="画线"><a href="#画线" class="headerlink" title="画线"></a>画线</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 绘制曲线</span></div><div class="line">- (<span class="keyword">void</span>)drawCurve</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 绘制曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 1.获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 一定要有起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddQuadCurveToPoint</span>(ctf, <span class="number">150</span>, <span class="number">20</span>, <span class="number">250</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 线的状态</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * beaier 封装的画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawStateBezier</div><div class="line">&#123;</div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path stroke];</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="built_in">UIBezierPath</span> *path1 = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path1 moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path1 addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path1.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path1 stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawContextRefState</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取图形上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 获取路径 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">50</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 重新设置起点，两根线会分开 */</span></div><div class="line">    <span class="comment">//    CGContextMoveToPoint(ctf, 50, 50);</span></div><div class="line">    <span class="comment">/** 默认上一根线的终点是下一根线的起点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置绘图状态, 一定要在渲染之前 */</span></div><div class="line">    <span class="comment">/** 颜色 */</span></div><div class="line">    [[<span class="built_in">UIColor</span> redColor] setStroke];</div><div class="line">    <span class="comment">/** 线宽 */</span></div><div class="line">    <span class="built_in">CGContextSetLineWidth</span>(ctf, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 设置连接样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineJoin</span>(ctf, kCGLineJoinRound);<span class="comment">/** 圆拐角 */</span></div><div class="line">    <span class="comment">/** 设置顶角样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineCap</span>(ctf, kCGLineCapRound);</div><div class="line">    </div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 画线的三种方式</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * bezier画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawBezierLines</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** UIKit封装了绘图功能 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 贝塞尔曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 添加一个线 */</span></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染 */</span></div><div class="line">    [path stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLine</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 1.获取图形上下文 */</span></div><div class="line">    <span class="comment">/** 目前我们用的上下文都是UIGraphics开头 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctx = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">CGMutablePathRef</span> path = <span class="built_in">CGPathCreateMutable</span>();</div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGPathMoveToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">50</span>, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 添加一根线到莫个点 */</span></div><div class="line">    <span class="built_in">CGPathAddLineToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.路径添加到上下文 */</span></div><div class="line">    <span class="built_in">CGContextAddPath</span>(ctx, path);</div><div class="line">    </div><div class="line">    <span class="comment">/** 4.渲染上下文到view的图层上 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctx);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 省略的系统画线方法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLineSimple</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 描述路径 */</span></div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="comment">/** 设置终点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="画形状"><a href="#画形状" class="headerlink" title="画形状"></a>画形状</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 画简单形状</span></div><div class="line">- (<span class="keyword">void</span>)drawCycleLine</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 圆角矩形  */</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:<span class="built_in">CGRectMake</span>(<span class="number">40</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">60</span>) cornerRadius:<span class="number">5</span>];</div><div class="line">    </div><div class="line">    [path stroke];</div><div class="line">    </div><div class="line">    <span class="comment">/** 圆弧</span></div><div class="line">     * Center: 圆心</div><div class="line">     * angle:  弧度</div><div class="line">     * clockwise: yes是顺时针</div><div class="line">     */</div><div class="line">    <span class="built_in">UIBezierPath</span> *path1 = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:<span class="built_in">CGPointMake</span>(<span class="number">125</span>, <span class="number">125</span>) radius:<span class="number">100</span> startAngle:<span class="number">0</span> endAngle:M_PI clockwise:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    [path1 stroke];</div><div class="line">    </div><div class="line">    <span class="comment">//    [path fill];/** 一个完整的封闭路径，用填充，整个路径的面都是一样的 */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 画扇形</span></div><div class="line">- (<span class="keyword">void</span>)drawSector</div><div class="line">&#123;</div><div class="line">    <span class="built_in">CGPoint</span> center = <span class="built_in">CGPointMake</span>(<span class="number">125</span>, <span class="number">125</span>);</div><div class="line">    </div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:center radius:<span class="number">80</span> startAngle:<span class="number">0</span> endAngle:M_PI_2 clockwise:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    [path addLineToPoint:center];</div><div class="line">    </div><div class="line">    <span class="comment">/** 关闭路径</span></div><div class="line">     * 默认从终点画到起点</div><div class="line">     */</div><div class="line"><span class="comment">//    [path closePath];</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 如果使用填充，会自动关闭路径 */</span></div><div class="line">    [path fill];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="注意-这些方法一定要在视图的-drawRect-方法中调用"><a href="#注意-这些方法一定要在视图的-drawRect-方法中调用" class="headerlink" title="注意: 这些方法一定要在视图的 drawRect 方法中调用"></a>注意: 这些方法一定要在视图的 drawRect 方法中调用</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect &#123;</div><div class="line">    <span class="comment">// Drawing code</span></div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> drawSector];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-        </div>
-        <div class="post-tool">
-            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
-            </a>
-        </div>
-        
-        <div class="post-tags">Tags：
-            
-            <a href="/tags/iOS/">iOS</a>
-            
-            <a href="/tags/Quart2D/">Quart2D</a>
-            
-        </div>
-        
-    </article>
-    
-</div>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        </div><!-- end #main-->
-    </div><!-- end #body -->
-    <footer class="footer">
-    <div class="footer-inner">
-        <p>
-            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <!-- 自定义链接 -->
-            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/app" title="App下载">App下载</a>
-        </p>
-        <p>
-            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
-            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
-            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
-            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
-            ，感谢<a href="https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2" target="_blank">Coding</a>提供免费优质的强力驱动
-        </p>
-        
+      
     </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quart2D/">Quart2D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yODAyOS80NjA2">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/数据库操作语句/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          数据库操作语句
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#画线"><span class="nav-number">1.</span> <span class="nav-text">画线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画形状"><span class="nav-number">2.</span> <span class="nav-text">画形状</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-这些方法一定要在视图的-drawRect-方法中调用"><span class="nav-number">2.1.</span> <span class="nav-text">注意: 这些方法一定要在视图的 drawRect 方法中调用</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 码路 All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
 </footer>
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="/js/InsightSearch.js"></script>
-<script src="/js/SimpleCore.js"></script>
-</div>
-<div class="fixed-btn">
-    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
-</div>
+
+
+<!-- min height -->
+
 <script>
-    $(function () {
-        SimpleCore.init({
-            buildingTime: '08/20/2014',
-            current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            customImg: '/images/weixin-mp.png'
-        });
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
     });
 </script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
 </body>
 </html>

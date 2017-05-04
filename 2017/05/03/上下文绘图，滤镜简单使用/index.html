@@ -5,44 +5,31 @@
   <meta charset="UTF-8">
   
     <title>上下文绘图，滤镜简单使用 | 码路</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="王冬尧">
     
-
+    <meta name="description" content="一、drawRect绘制功能1.绘制直线1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** （这个方法在loadView、viewDidLoad方法后">
     
-    <meta name="description" content="一、drawRect绘制功能1.绘制直线1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** （这个方法在loadView、viewDidLoad方法后执行） */- (void)drawRect:(CGRect)rect &amp;#123;">
-<meta name="keywords" content="iOS，CGContextRef">
-<meta property="og:type" content="article">
-<meta property="og:title" content="上下文绘图，滤镜简单使用">
-<meta property="og:url" content="http://wdyit.com/2017/05/03/上下文绘图，滤镜简单使用/index.html">
-<meta property="og:site_name" content="码路">
-<meta property="og:description" content="一、drawRect绘制功能1.绘制直线1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** （这个方法在loadView、viewDidLoad方法后执行） */- (void)drawRect:(CGRect)rect &amp;#123;">
-<meta property="og:updated_time" content="2017-05-03T04:50:59.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上下文绘图，滤镜简单使用">
-<meta name="twitter:description" content="一、drawRect绘制功能1.绘制直线1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/** （这个方法在loadView、viewDidLoad方法后执行） */- (void)drawRect:(CGRect)rect &amp;#123;">
-
     
-    <link rel="alternative" href="/atom.xml" title="码路" type="application/atom+xml">
+    
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
     <header>
-      
-<div>
+      <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="码路" title="码路"/></a>
+				<a href="/"><img src="/img/logo.svg" alt="码路" title="码路"/></a>
 			</div>
 			
 			<div id="textlogo">
@@ -53,23 +40,16 @@
 			</a></div>
 			<nav class="animated">
 				<ul>
-					<ul>
-					 
-						<li><a href="/">主页</a></li>
 					
-						<li><a href="/archives">归档</a></li>
+						<li><a href="/">Home</a></li>
 					
-						<li><a href="/about">关于</a></li>
-					
-						<li><a href="/tags">标签</a></li>
-					
-						<li><a href="/categories">分类</a></li>
+						<li><a href="/archives">Archives</a></li>
 					
 					<li>
- 					
+					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:wdyit.com">
 					</form>
 					
@@ -77,10 +57,10 @@
 				</ul>
 			</nav>			
 </div>
+
     </header>
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
-  
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -88,21 +68,21 @@
       <a href="/2017/05/03/上下文绘图，滤镜简单使用/" title="上下文绘图，滤镜简单使用" itemprop="url">上下文绘图，滤镜简单使用</a>
   </h1>
   <p class="article-author">By
-       
-		<a href="/about" title="王冬尧" target="_blank" itemprop="author">王冬尧</a>
-		
+    
+      <a href="http://wdyit.com" title="王冬尧">王冬尧</a>
+    </p>
   <p class="article-time">
-    <time datetime="2017-05-03T04:41:39.000Z" itemprop="datePublished"> 发表于 2017-05-03</time>
+    <time datetime="2017-05-03T04:41:39.000Z" itemprop="datePublished">2017-05-03</time>
+    更新日期:<time datetime="2017-05-03T04:50:59.000Z" itemprop="dateModified">2017-05-03</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
+		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、drawRect绘制功能"><span class="toc-number">1.</span> <span class="toc-text">一、drawRect绘制功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-绘制直线"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.绘制直线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#精简绘制直线"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">精简绘制直线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绘制椭圆"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 绘制椭圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-绘制弧形"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 绘制弧形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-绘制贝塞尔曲线"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 绘制贝塞尔曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-绘制文字"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 绘制文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-图像绘制"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.图像绘制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、绘制渐变视图"><span class="toc-number">2.</span> <span class="toc-text">二、绘制渐变视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、滤镜使用"><span class="toc-number">3.</span> <span class="toc-text">三、滤镜使用</span></a></li></ol>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、drawRect绘制功能"><span class="toc-number">1.</span> <span class="toc-text">一、drawRect绘制功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-绘制直线"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.绘制直线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#精简绘制直线"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">精简绘制直线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绘制椭圆"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 绘制椭圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-绘制弧形"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 绘制弧形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-绘制贝塞尔曲线"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 绘制贝塞尔曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-绘制文字"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 绘制文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-图像绘制"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.图像绘制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、绘制渐变视图"><span class="toc-number">2.</span> <span class="toc-text">二、绘制渐变视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、滤镜使用"><span class="toc-number">3.</span> <span class="toc-text">三、滤镜使用</span></a></li></ol>
 		</div>
 		
 		<h1 id="一、drawRect绘制功能"><a href="#一、drawRect绘制功能" class="headerlink" title="一、drawRect绘制功能"></a>一、drawRect绘制功能</h1><h3 id="1-绘制直线"><a href="#1-绘制直线" class="headerlink" title="1.绘制直线"></a>1.绘制直线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/** （这个方法在loadView、viewDidLoad方法后执行） */</div><div class="line">- (void)drawRect:(CGRect)rect &#123;</div><div class="line">    </div><div class="line">    /** 1.获取上下文 */</div><div class="line">    CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">    </div><div class="line">    /** 2.创建路径对象 */</div><div class="line">    CGMutablePathRef path = CGPathCreateMutable();</div><div class="line">    CGPathMoveToPoint(path, nil, 20, 50);/** 移动到指定位置(设置路径起点) */</div><div class="line">    CGPathAddLineToPoint(path, nil, 20, 100);/** 绘制一个直线(从起始位置开始) */</div><div class="line">    CGPathAddLineToPoint(path, nil, 300, 100);/** 绘制另外一条直线，从上一条的终点开始 */</div><div class="line">    </div><div class="line">    /** 3.添加路径到上下文 */</div><div class="line">    CGContextAddPath(context, path);</div><div class="line">    </div><div class="line">    /** 4.设置推行上下文属性 */</div><div class="line">    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1);/** 设置触笔的颜色 */</div><div class="line">    CGContextSetRGBFillColor(context, 1.0, 0, 0, 1);/** 设置填充颜色 */</div><div class="line">    CGContextSetLineWidth(context, 2.0);/** 设置线条宽度 */</div><div class="line">    CGContextSetLineCap(context, kCGLineCapRound);/** 设置顶点样式,（20,50）和（300,100）是顶点 */</div><div class="line">    CGContextSetLineJoin(context, kCGLineJoinRound);/** 设置连接点样式，(20,100)是连接点 */</div><div class="line">    </div><div class="line">    /* 设置线段样式</div><div class="line">     phase:虚线开始的位置 </div><div class="line">     lengths:虚线长度间隔（例如下面的定义说明第一条线段长度8，然后间隔3重新绘制8点的长度线段，当然这个数组可以定义更多元素） </div><div class="line">     count:虚线数组元素个数 </div><div class="line">     */</div><div class="line">    </div><div class="line">    CGFloat lengths[2] = &#123; 18, 9 &#125;;</div><div class="line">    CGContextSetLineDash(context, 0, lengths, 2);</div><div class="line">    </div><div class="line">    /* 设置阴影</div><div class="line">     context:图形上下文 </div><div class="line">     offset:偏移量 blur:模糊度 </div><div class="line">     color:阴影颜色 </div><div class="line">     */</div><div class="line">    CGColorRef color = [UIColor grayColor].CGColor;//颜色转化，由于Quartz 2D跨平台，所以其中不能使用UIKit中的对象，但是UIkit提供了转化方法</div><div class="line">    CGContextSetShadowWithColor(context, CGSizeMake(2, 2), 0.8, color);</div><div class="line">    </div><div class="line">    /** 5.绘制图像到指定图形上下文 */</div><div class="line">    /*CGPathDrawingMode是填充方式,枚举类型 </div><div class="line">     kCGPathFill:只有填充（非零缠绕数填充），不绘制边框 </div><div class="line">     kCGPathEOFill:奇偶规则填充（多条路径交叉时，奇数交叉填充，偶交叉不填充） </div><div class="line">     kCGPathStroke:只有边框 </div><div class="line">     kCGPathFillStroke：既有边框又有填充 </div><div class="line">     kCGPathEOFillStroke：奇偶填充并绘制边框 */</div><div class="line">    </div><div class="line">    CGContextDrawPath(context, kCGPathFillStroke);//最后一个参数是填充类型</div><div class="line">    </div><div class="line">    </div><div class="line">    /** 6.释放对象 */</div><div class="line">    CGPathRelease(path);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -117,7 +97,12 @@
   
 	</div>
 		<footer class="article-footer clearfix">
-<div class="article-catetags">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS，CGContextRef/">iOS，CGContextRef</a>
+  </div>
+
 
 <div class="article-categories">
   <span></span>
@@ -125,33 +110,21 @@
 </div>
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS，CGContextRef/">iOS，CGContextRef</a>
+
+<div class="article-share" id="share">
+
+  <div data-url="http://wdyit.com/2017/05/03/上下文绘图，滤镜简单使用/" data-title="上下文绘图，滤镜简单使用 | 码路" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
-
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://wdyit.com/2017/05/03/上下文绘图，滤镜简单使用/" data-title="上下文绘图，滤镜简单使用 | 码路" data-tsina="2717024360" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
+</footer>   	       
 	</article>
 	
 <nav class="article-nav clearfix">
  
  <div class="prev" >
  <a href="/2017/05/03/XCode集成Cocopods/" title="XCode集成Cocopods">
-  <strong>上一篇：</strong><br/>
+  <strong>PREVIOUS:</strong><br/>
   <span>
   XCode集成Cocopods</span>
 </a>
@@ -160,7 +133,7 @@
 
 <div class="next">
 <a href="/2017/05/03/视图控制器/"  title="视图控制器">
- <strong>下一篇：</strong><br/> 
+ <strong>NEXT:</strong><br/> 
  <span>视图控制器
 </span>
 </a>
@@ -169,15 +142,12 @@
 </nav>
 
 	
-
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、drawRect绘制功能"><span class="toc-number">1.</span> <span class="toc-text">一、drawRect绘制功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-绘制直线"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.绘制直线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#精简绘制直线"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">精简绘制直线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绘制椭圆"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 绘制椭圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-绘制弧形"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 绘制弧形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-绘制贝塞尔曲线"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 绘制贝塞尔曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-绘制文字"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 绘制文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-图像绘制"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.图像绘制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、绘制渐变视图"><span class="toc-number">2.</span> <span class="toc-text">二、绘制渐变视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、滤镜使用"><span class="toc-number">3.</span> <span class="toc-text">三、滤镜使用</span></a></li></ol>
- 
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、drawRect绘制功能"><span class="toc-number">1.</span> <span class="toc-text">一、drawRect绘制功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-绘制直线"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.绘制直线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#精简绘制直线"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">精简绘制直线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绘制椭圆"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 绘制椭圆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-绘制弧形"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 绘制弧形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-绘制贝塞尔曲线"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 绘制贝塞尔曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-绘制文字"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 绘制文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-图像绘制"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.图像绘制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、绘制渐变视图"><span class="toc-number">2.</span> <span class="toc-text">二、绘制渐变视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、滤镜使用"><span class="toc-number">3.</span> <span class="toc-text">三、滤镜使用</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -185,23 +155,11 @@
 <aside class="clearfix">
 
   
-<div class="github-card">
-<p class="asidetitle">Github 名片</p>
-<div class="github-card" data-github="wdyit" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-  </div>
-
-
-
-  
 <div class="categorieslist">
 	<p class="asidetitle">分类</p>
 		<ul>
 		
-		  
 			<li><a href="/categories/iOS/" title="iOS">iOS<sup>7</sup></a></li>
-		  
 		
 		</ul>
 </div>
@@ -212,78 +170,41 @@
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
-			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>6</sup></a></li>
-			
+			<li><a href="/tags/AutoLayout/" title="AutoLayout">AutoLayout<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/Quart2D/" title="Quart2D">Quart2D<sup>2</sup></a></li>
-			
+			<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/AutoLayout/" title="AutoLayout">AutoLayout<sup>1</sup></a></li>
-			
+			<li><a href="/tags/CoreData/" title="CoreData">CoreData<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/Xib/" title="Xib">Xib<sup>1</sup></a></li>
-			
+			<li><a href="/tags/DDL/" title="DDL">DDL<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/Storyboard/" title="Storyboard">Storyboard<sup>1</sup></a></li>
-			
+			<li><a href="/tags/NSSortDescriptor/" title="NSSortDescriptor">NSSortDescriptor<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/XCode/" title="XCode">XCode<sup>1</sup></a></li>
-			
+			<li><a href="/tags/Quart2D/" title="Quart2D">Quart2D<sup>2</sup></a></li>
 		
-			
-				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
-			
+			<li><a href="/tags/Storyboard/" title="Storyboard">Storyboard<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/iOS，CGContextRef/" title="iOS，CGContextRef">iOS，CGContextRef<sup>1</sup></a></li>
-			
+			<li><a href="/tags/UIStoryboard/" title="UIStoryboard">UIStoryboard<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/控制器生命周期/" title="控制器生命周期">控制器生命周期<sup>1</sup></a></li>
-			
+			<li><a href="/tags/XCode/" title="XCode">XCode<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/CoreData/" title="CoreData">CoreData<sup>1</sup></a></li>
-			
+			<li><a href="/tags/Xib/" title="Xib">Xib<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/NSSortDescriptor/" title="NSSortDescriptor">NSSortDescriptor<sup>1</sup></a></li>
-			
+			<li><a href="/tags/iOS/" title="iOS">iOS<sup>6</sup></a></li>
 		
-			
-				<li><a href="/tags/DDL/" title="DDL">DDL<sup>1</sup></a></li>
-			
+			<li><a href="/tags/iOS，CGContextRef/" title="iOS，CGContextRef">iOS，CGContextRef<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
-			
+			<li><a href="/tags/控制器生命周期/" title="控制器生命周期">控制器生命周期<sup>1</sup></a></li>
 		
-			
-				<li><a href="/tags/UIStoryboard/" title="UIStoryboard">UIStoryboard<sup>1</sup></a></li>
-			
+			<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
 		
 		</ul>
 </div>
 
 
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
-        
-    </ul>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
 </div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2717024360&verifier=17ffd493&dpc=1"></iframe>
-</div>
-
 
 </aside>
 </div>
@@ -296,46 +217,21 @@
 	</div>
 	
 	
-	<section class="info">
-		<p> Hello world!!! <br/>
-			This is my blog, believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2717024360" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/wdyit" target="_blank" class="icon-github" title="github"></a>
+	<div class="social-font clearfix">
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		<a href="mailto:itwork@wdyblog.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
-			
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
 		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
-		
-		<a href="/about" target="_blank" title="王冬尧">王冬尧</a>
-		
+		<a href="http://wdyit.com" target="_blank" title="王冬尧">王冬尧</a>
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
+    <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -353,6 +249,20 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -366,20 +276,6 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
 });
 </script>
 
@@ -388,6 +284,8 @@ $(document).ready(function(){
   var ai = $('.article-content>iframe'),
       ae = $('.article-content>embed'),
       t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
       ta = $('#toc.toc-aside'),
       o  = $('.openaside'),
       c  = $('.closeaside');
@@ -397,15 +295,19 @@ $(document).ready(function(){
   if(ae.length>0){
    ae.wrap('<div class="video-container" />');
   };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
 });
 </script>
 
@@ -416,116 +318,32 @@ $(document).ready(function(){
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
       title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
+      tsina = $this.attr('data-tsina');
   var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
   '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
   '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
   '<span title="Share to"></span>'
   ].join('');
   $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
   $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
     });
   });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
+});     
 </script>
 
 
 
-<!-- Analytics Begin -->
 
 
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?93c4170c63cedd62210f5964de47a41a";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
 
   </body>
 </html>

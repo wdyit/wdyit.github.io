@@ -1,10 +1,10 @@
 
-  <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>标签 : Xib | 码路</title>
+    <title>categories | 码路</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="王冬尧">
@@ -13,12 +13,13 @@
     
     <meta name="description" content="一个有梦想的人，start from zero">
 <meta property="og:type" content="website">
-<meta property="og:title" content="码路">
-<meta property="og:url" content="http://wdyit.com/tags/Xib/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://wdyit.com/categories/index.html">
 <meta property="og:site_name" content="码路">
 <meta property="og:description" content="一个有梦想的人，start from zero">
+<meta property="og:updated_time" content="2017-05-04T05:54:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码路">
+<meta name="twitter:title" content="categories">
 <meta name="twitter:description" content="一个有梦想的人，start from zero">
 
     
@@ -77,31 +78,17 @@
 </div>
       </header>
       <div id="container">
-        
-
+          
 <div class="archive-title" >
-  <h2 class="tag-icon">Xib</h2>
-  
+<h2 class="category-icon">分类</h2>
+
+<a data-src="/categories/iOS/" href="#iOS" title="iOS">iOS<sup>7</sup></a>
+
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/05/03/AutoLayout适配屏幕/" title="AutoLayout适配屏幕" itemprop="url">
-  
-
-    <time datetime="2017-05-03T04:43:25.000Z" itemprop="datePublished">2017-05-03</time>
-
-
-    <h1 itemprop="name">AutoLayout适配屏幕</h1>
-
-  </a>
-</section>
-
-
-  </div>
+<div id="main" class="archive-part">
+<div class="all-list-box"></div>
 </div>
+
 
       </div>
       <footer><div id="footer" >
@@ -204,6 +191,24 @@ $(document).ready(function(){
 
 
 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var list    = $('.archive-title a'),
+      box     = $('.all-list-box'),
+      first   = $('.archive-title a:first-of-type');
+      box.load(first.attr('data-src').toString()+' #archive-page');
+      first.addClass('current');
+  list.each(function(){
+    $(this).click(function(){
+      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
+      box.load(listSrc);
+      list.removeClass('current');
+      $(this).addClass('current');
+     });  
+    });
+  }); 
+</script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

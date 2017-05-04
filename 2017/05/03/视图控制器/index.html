@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>视图控制器 | 码路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="iOSUIStoryboard控制器生命周期" />
+  
+  
+  
+  
+  <meta name="description" content="## 视图控制器创建的多种方式 什么是视图控制器 视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算 每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样 前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示  视图控制器的创建方式 UIStoryboard的方式 获取stor">
+<meta name="keywords" content="iOS,UIStoryboard,控制器生命周期">
+<meta property="og:type" content="article">
+<meta property="og:title" content="视图控制器">
+<meta property="og:url" content="http://wdyit.com/2017/05/03/视图控制器/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="## 视图控制器创建的多种方式 什么是视图控制器 视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算 每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样 前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示  视图控制器的创建方式 UIStoryboard的方式 获取stor">
+<meta property="og:updated_time" content="2017-05-03T04:51:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="视图控制器">
+<meta name="twitter:description" content="## 视图控制器创建的多种方式 什么是视图控制器 视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算 每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样 前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示  视图控制器的创建方式 UIStoryboard的方式 获取stor">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" rel="home" >
+                <img style="margin-bottom: 10px;"  width="124px" height="124px" alt="Hike News" src=" //source/css/images/avatar.png">
+              </a>
+            
+          </h1>
+
+          
+            <div class="site-description">一个有梦想的人，start from zero</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-视图控制器" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      视图控制器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/05/03/视图控制器/" class="article-date">
+	  <time datetime="2017-05-03T04:40:16.000Z" itemprop="datePublished">五月 3, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>## 视图控制器创建的多种方式
+</code></pre><h4 id="什么是视图控制器"><a href="#什么是视图控制器" class="headerlink" title="什么是视图控制器"></a>什么是视图控制器</h4><ul>
+<li>视图控制器就是用来 ”控制“ 或者说 ”管理“ 界面(视图)的”换句话说界面长得丑与美由视图控制器说的算</li>
+<li>每个视图控制器(UIViewController)都有一个View属性来描述界面长什么样</li>
+<li>前面所讲的设置窗口的根控制器其实就是会把视图控制器的里View会添加在窗口上进行显示</li>
+</ul>
+<h4 id="视图控制器的创建方式"><a href="#视图控制器的创建方式" class="headerlink" title="视图控制器的创建方式"></a>视图控制器的创建方式</h4><ol>
+<li>UIStoryboard的方式<ul>
+<li>获取storyboard箭头所指的视图控制器</li>
+<li>获取storyboard标识了ID所指的视图控制器</li>
+</ul>
+</li>
+<li>直接创建控制器</li>
+<li>创建带xib的视图控制器<ul>
+<li>xib是描述界面长什么样的</li>
+<li>调用控制器的【-(instancetype)initWithNibName:bundle:】;</li>
+<li>方法为什么是nib，因为程序打包运行后，xib会放在bundle目录下，并且后缀名为nib”进入沙盒验证”</li>
+<li>xib的 “File’s Owner” 是代表界面由谁管理，控制器view对应哪个界面的描述</li>
+</ul>
+</li>
+</ol>
+<h4 id="多控制器"><a href="#多控制器" class="headerlink" title="多控制器"></a>多控制器</h4><ol>
+<li>导航控制器<br>(1)导航控制器是用来管多个子控制器，实现不同界面间的 “来回切换”,系统的界面就是一个导航控制器<br>(2)掌握代码创建导航控制器及设置根控制器<br>(3)掌握如何进入到下一个控制器、返回上一个控制器、返回第一控制器<br>(4)理解导航控制器的view的结构<br>(5)掌握导航控制器显示各个子控制器显示的的原理 //栈顶原理<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">栈顶原理</div><div class="line">0.导航控制器将所要显示的子控制器放到一个栈中</div><div class="line">1.导航控制器显示的第一个控制器为栈顶控制器</div><div class="line">2.返回上一个子控制器时，栈顶控制器的view从导航控制器的view中移除，并栈顶控制器将被销毁</div><div class="line">3.把最新的栈顶控制器的view显示在导航控制器view的上面</div><div class="line">4.所有的子控制器会存储在导航控制器的viewControllers属性中</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>(6)掌握导航控制器中导航栏左右两边的按钮与标题的设置</p>
+<ul>
+<li>每一个控制器有个navigationItem属性</li>
+<li>使用navigationItem可设置标题</li>
+<li>设置标题还可以使用控制器的title属性</li>
+<li>使用navigationItem还可设置左右两边的按钮</li>
+<li>设置返回按钮，当前控制器设置的返回按钮是给下一个控制器显示的</li>
+<li>navigationItem还有个titleView属性，可添加自己义的标题</li>
+</ul>
+<h4 id="控制器的生命周期"><a href="#控制器的生命周期" class="headerlink" title="控制器的生命周期"></a>控制器的生命周期</h4><p>#####理解控制器的生命周期的几个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">viewDidLoad               //view加载完毕</div><div class="line">viewWillAppear            //view即将显示</div><div class="line">viewDidAppear             //view已经显示</div><div class="line">viewWillDisappear         //view即将消失</div><div class="line">viewDidDisappear          //view已经消失</div><div class="line">viewWillUnload            //view即被卸载</div><div class="line">viewDidUnload             //view已经卸载</div><div class="line">dealloc                   //控制器被销毁</div></pre></td></tr></table></figure></p>
+<h4 id="接收到控制器内存警告"><a href="#接收到控制器内存警告" class="headerlink" title="接收到控制器内存警告"></a>接收到控制器内存警告</h4><ul>
+<li>循问当前哪个view可以卸载，比如当前控制器不在窗口上，就代表不用，就进行卸载view</li>
+<li>当view被卸载完后，清空数据来释放内存给别人用</li>
+<li>在arc环境下清空资源前，会先释放</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIStoryboard/">UIStoryboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制器生命周期/">控制器生命周期</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yODAyOS80NjA2">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/上下文绘图，滤镜简单使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          上下文绘图，滤镜简单使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/03/数据库操作语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">数据库操作语句</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是视图控制器"><span class="nav-number">1.</span> <span class="nav-text">什么是视图控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图控制器的创建方式"><span class="nav-number">2.</span> <span class="nav-text">视图控制器的创建方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多控制器"><span class="nav-number">3.</span> <span class="nav-text">多控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制器的生命周期"><span class="nav-number">4.</span> <span class="nav-text">控制器的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收到控制器内存警告"><span class="nav-number">5.</span> <span class="nav-text">接收到控制器内存警告</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 码路 All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

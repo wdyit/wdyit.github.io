@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据库操作语句 | 码路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="iOSCoreDataNSSortDescriptorDDL数据库" />
+  
+  
+  
+  
+  <meta name="description" content="CoreDataCoreData的使用步骤- 创建模型文件 - 添加实体 - 创建实体类 - 生成上下文件 关联模型文件生成数据库 - 保存对象到数据库 - 从数据库获取对象 - 更新数据 - 删除数据 数据持久化：是将一个数据保存到文件中，而不是内存中 CoreData简单用法123456789101112131415161718192021222324252627282930313233343">
+<meta name="keywords" content="iOS,CoreData,NSSortDescriptor,DDL,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库操作语句">
+<meta property="og:url" content="http://wdyit.com/2017/05/03/数据库操作语句/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="CoreDataCoreData的使用步骤- 创建模型文件 - 添加实体 - 创建实体类 - 生成上下文件 关联模型文件生成数据库 - 保存对象到数据库 - 从数据库获取对象 - 更新数据 - 删除数据 数据持久化：是将一个数据保存到文件中，而不是内存中 CoreData简单用法123456789101112131415161718192021222324252627282930313233343">
+<meta property="og:updated_time" content="2017-05-03T04:52:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库操作语句">
+<meta name="twitter:description" content="CoreDataCoreData的使用步骤- 创建模型文件 - 添加实体 - 创建实体类 - 生成上下文件 关联模型文件生成数据库 - 保存对象到数据库 - 从数据库获取对象 - 更新数据 - 删除数据 数据持久化：是将一个数据保存到文件中，而不是内存中 CoreData简单用法123456789101112131415161718192021222324252627282930313233343">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" rel="home" >
+                <img style="margin-bottom: 10px;"  width="124px" height="124px" alt="Hike News" src=" //source/css/images/avatar.png">
+              </a>
+            
+          </h1>
+
+          
+            <div class="site-description">一个有梦想的人，start from zero</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-数据库操作语句" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      数据库操作语句
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/05/03/数据库操作语句/" class="article-date">
+	  <time datetime="2017-05-03T04:38:30.000Z" itemprop="datePublished">五月 3, 2017</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CoreData"><a href="#CoreData" class="headerlink" title="CoreData"></a>CoreData</h2><h4 id="CoreData的使用步骤"><a href="#CoreData的使用步骤" class="headerlink" title="CoreData的使用步骤"></a>CoreData的使用步骤</h4><pre><code>- 创建模型文件
+- 添加实体
+- 创建实体类
+- 生成上下文件 关联模型文件生成数据库
+- 保存对象到数据库
+- 从数据库获取对象
+- 更新数据
+- 删除数据
+</code></pre><p><strong>数据持久化：是将一个数据保存到文件中，而不是内存中</strong></p>
+<h4 id="CoreData简单用法"><a href="#CoreData简单用法" class="headerlink" title="CoreData简单用法"></a>CoreData简单用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> 1. 创建模型文件</div><div class="line"> 2. 添加实体</div><div class="line"> 3. 创建实体类(就是一张表)</div><div class="line"> 4. 生成上下文件 关联模型文件生成数据库</div><div class="line"> */</div><div class="line"></div><div class="line">- (void)setUpCoreData &#123;</div><div class="line">   /** 关联的时候：如果本地没有这个文件，coreData会自己创建 */</div><div class="line">  /** 生成上下文 */</div><div class="line">  NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];</div><div class="line">  /** 模型文件 */</div><div class="line">  NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];</div><div class="line">  /** 上下文要关联数据库 */</div><div class="line">  /** 持久化调度器 */</div><div class="line">  NSPersistentStoreCoordinator *store = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];</div><div class="line">  /** 告诉CoreData数据库的名字和路径 */</div><div class="line">  NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];</div><div class="line">  NSString *sqlitePath = [doc stringByAppendingString:@&quot;company.sqlite&quot;];</div><div class="line"></div><div class="line">  [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:nil];</div><div class="line"></div><div class="line">  context.persistentStoreCoordinator = store;</div><div class="line"></div><div class="line">  _context = context;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">#pragma mark - 添加</div><div class="line">- (IBAction)addEntity &#123;</div><div class="line">    </div><div class="line">    Entity *enti = [NSEntityDescription insertNewObjectForEntityForName:@&quot;Entity&quot; inManagedObjectContext:_context];</div><div class="line">    enti.name = @&quot;wangwu&quot;;</div><div class="line">    enti.hight = @2.30;</div><div class="line">    </div><div class="line">    NSError *error = nil;</div><div class="line">    [_context save:&amp;error];</div><div class="line">    </div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 读取员工</div><div class="line">- (IBAction)readEntity &#123;</div><div class="line">    </div><div class="line">    /** 1. FetchRequest抓取对象 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 2. 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;wangwu&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    /** 3. 排序 */</div><div class="line">    /** 身高的升序排序 */</div><div class="line">    NSSortDescriptor *heightSort = [NSSortDescriptor sortDescriptorWithKey:@&quot;hight&quot; ascending:YES];</div><div class="line">    request.sortDescriptors = @[heightSort];/*&lt; 数组的条件排序 */</div><div class="line">    </div><div class="line">    </div><div class="line">    /** 4. 执行请求 */</div><div class="line">    NSError *error = nil;</div><div class="line">    NSArray *arr = [_context executeFetchRequest:request error:&amp;error];</div><div class="line">    if (error) &#123;</div><div class="line">        NSLog(@&quot;%@&quot;, error);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 遍历数组，读取的内容 */</div><div class="line">    for (Entity *ti in arr) &#123;</div><div class="line">        NSLog(@&quot;%@, %@&quot;, ti.name, ti.hight);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 更新员工</div><div class="line"></div><div class="line">- (IBAction)updateEntity &#123;</div><div class="line">    </div><div class="line">    /** 更改张三  身高两米 */</div><div class="line">    </div><div class="line">    /** 1.查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    /** 设置过滤条件 */</div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    /** 执行请求 */</div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 2.更新身高 */</div><div class="line">    for (Entity *en in enti) &#123;</div><div class="line">        en.hight = @2.0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 3.保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark - 删除</div><div class="line">- (IBAction)delete &#123;</div><div class="line">    </div><div class="line">    /** 找到list */</div><div class="line">    /** .查找张三 */</div><div class="line">    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@&quot;Entity&quot;];</div><div class="line">    </div><div class="line">    NSPredicate *predic = [NSPredicate predicateWithFormat:@&quot;name = %@&quot;, @&quot;zhangsan&quot;];</div><div class="line">    request.predicate = predic;</div><div class="line">    </div><div class="line">    NSArray *enti = [_context executeFetchRequest:request error:nil];</div><div class="line">    </div><div class="line">    /** 删除 */</div><div class="line">    for (Entity *entity in enti) &#123;</div><div class="line">        [_context deleteObject:entity];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** 保存 */</div><div class="line">    [_context save:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="数据库软件使用中的语句"><a href="#数据库软件使用中的语句" class="headerlink" title="数据库软件使用中的语句"></a>数据库软件使用中的语句</h2><ul>
+<li>DDL：数据定义语句<ul>
+<li>创建表格<ul>
+<li>create table if not exists + 表名 (字段名1 字段类型1，字段名2 字段类型2)</li>
+<li>例子：create table if not exists t_class (id integer primary auto increment, name text);</li>
+</ul>
+</li>
+<li>删除表格<ul>
+<li>drop table if exists + 表名</li>
+<li>DML 数据操作源（增删改查）</li>
+</ul>
+</li>
+<li>插入<ul>
+<li>insert into + 表名 (字段名) values (名)</li>
+<li>INSERT INTO t_class(name) VALUES (‘哈哈哈哈’);</li>
+</ul>
+</li>
+<li>更改<ul>
+<li>update + 表名 set + 字段名 = 字段1的值</li>
+<li>UPDATE t_class SET name = ‘哈哈哈哈’;</li>
+<li>这样的更改是所有的都改</li>
+</ul>
+</li>
+<li>根据条件更改 （where）<ul>
+<li>UPDATE t_student set name = ‘qq’ WHERE age &lt; 10 and id , 50;</li>
+</ul>
+</li>
+<li>删除<ul>
+<li>delete from + 表名</li>
+<li>DELETE FROM t_class;</li>
+</ul>
+</li>
+<li>删除记录，不是删除表<ul>
+<li>DQL语句 用来查询的</li>
+</ul>
+</li>
+<li>查询<ul>
+<li>SELECT name FROM t_class;</li>
+<li>select * from    查询所有字段</li>
+</ul>
+</li>
+<li>查询后排序<ul>
+<li>降序：SELECT * FROM t_student ORDER BY age desc;</li>
+<li>升序：SELECT * FROM t_student ORDER BY age asc;</li>
+</ul>
+</li>
+<li>约束 (建议给字段设定严格的约束，以保证数据的规范性)<ul>
+<li>not null：规定字段的值不能为null</li>
+<li>unique：规定字段的值必须唯一</li>
+<li>default：制定字段的默认值<ul>
+<li>create table t_student (id integer, name text not null unique, age integer not null default 1);</li>
+<li>name字段不能为null，并且唯一</li>
+<li>age字段不能为null，并且默认为1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DDL/">DDL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSSortDescriptor/">NSSortDescriptor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yODAyOS80NjA2">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/视图控制器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          视图控制器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/03/Quart2D 一 线面/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Quart2D 一 简单形状、线</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CoreData"><span class="nav-number">1.</span> <span class="nav-text">CoreData</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CoreData的使用步骤"><span class="nav-number">1.0.1.</span> <span class="nav-text">CoreData的使用步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CoreData简单用法"><span class="nav-number">1.0.2.</span> <span class="nav-text">CoreData简单用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库软件使用中的语句"><span class="nav-number">2.</span> <span class="nav-text">数据库软件使用中的语句</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 码路 All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

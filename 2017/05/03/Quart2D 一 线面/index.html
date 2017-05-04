@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Quart2D 一 简单形状、线 | 码路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+<meta name="keywords" content="iOS,Quart2D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quart2D 一 简单形状、线">
+<meta property="og:url" content="http://wdyit.com/2017/05/03/Quart2D 一 线面/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+<meta property="og:updated_time" content="2017-05-03T04:50:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quart2D 一 简单形状、线">
+<meta name="twitter:description" content="自我使用学习画图的一些用法，可以由简单开始，实现复杂画图操作">
+    
+
+    
+        <link rel="alternate" href="/" title="码路" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">码路</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">PPOffice</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Harbin, China</span>
+            <a id="follow" target="_blank" href="https://github.com/ppoffice/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                8
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                14
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Quart2D 一 线面" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Quart2D 一 简单形状、线
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/05/03/Quart2D 一 线面/">
+            <time datetime="2017-05-03T01:28:23.000Z" itemprop="datePublished">2017-05-03</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/iOS/">iOS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Quart2D/">Quart2D</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="画线"><a href="#画线" class="headerlink" title="画线"></a>画线</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 绘制曲线</span></div><div class="line">- (<span class="keyword">void</span>)drawCurve</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 绘制曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 1.获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 一定要有起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddQuadCurveToPoint</span>(ctf, <span class="number">150</span>, <span class="number">20</span>, <span class="number">250</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 线的状态</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * beaier 封装的画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawStateBezier</div><div class="line">&#123;</div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path stroke];</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="built_in">UIBezierPath</span> *path1 = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    [path1 moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    [path1 addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    path1.lineWidth = <span class="number">10</span>;</div><div class="line">    </div><div class="line">    [path1 stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawContextRefState</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取图形上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 获取路径 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">50</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 重新设置起点，两根线会分开 */</span></div><div class="line">    <span class="comment">//    CGContextMoveToPoint(ctf, 50, 50);</span></div><div class="line">    <span class="comment">/** 默认上一根线的终点是下一根线的起点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">50</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置绘图状态, 一定要在渲染之前 */</span></div><div class="line">    <span class="comment">/** 颜色 */</span></div><div class="line">    [[<span class="built_in">UIColor</span> redColor] setStroke];</div><div class="line">    <span class="comment">/** 线宽 */</span></div><div class="line">    <span class="built_in">CGContextSetLineWidth</span>(ctf, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 设置连接样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineJoin</span>(ctf, kCGLineJoinRound);<span class="comment">/** 圆拐角 */</span></div><div class="line">    <span class="comment">/** 设置顶角样式 */</span></div><div class="line">    <span class="built_in">CGContextSetLineCap</span>(ctf, kCGLineCapRound);</div><div class="line">    </div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 画线的三种方式</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * bezier画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawBezierLines</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** UIKit封装了绘图功能 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 贝塞尔曲线 */</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    </div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(<span class="number">50</span>, <span class="number">50</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 添加一个线 */</span></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">200</span>, <span class="number">200</span>)];</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染 */</span></div><div class="line">    [path stroke];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 系统画线</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLine</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 1.获取图形上下文 */</span></div><div class="line">    <span class="comment">/** 目前我们用的上下文都是UIGraphics开头 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctx = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 2.描述路径 */</span></div><div class="line">    <span class="comment">/** 创建路径 */</span></div><div class="line">    <span class="built_in">CGMutablePathRef</span> path = <span class="built_in">CGPathCreateMutable</span>();</div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGPathMoveToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">50</span>, <span class="number">30</span>);</div><div class="line">    <span class="comment">/** 添加一根线到莫个点 */</span></div><div class="line">    <span class="built_in">CGPathAddLineToPoint</span>(path, <span class="literal">NULL</span>, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 3.路径添加到上下文 */</span></div><div class="line">    <span class="built_in">CGContextAddPath</span>(ctx, path);</div><div class="line">    </div><div class="line">    <span class="comment">/** 4.渲染上下文到view的图层上 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctx);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 省略的系统画线方法</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)drawLineSimple</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 获取上下文 */</span></div><div class="line">    <span class="built_in">CGContextRef</span> ctf = <span class="built_in">UIGraphicsGetCurrentContext</span>();</div><div class="line">    </div><div class="line">    <span class="comment">/** 描述路径 */</span></div><div class="line">    <span class="comment">/** 设置起点 */</span></div><div class="line">    <span class="built_in">CGContextMoveToPoint</span>(ctf, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    <span class="comment">/** 设置终点 */</span></div><div class="line">    <span class="built_in">CGContextAddLineToPoint</span>(ctf, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    </div><div class="line">    <span class="comment">/** 渲染上下文 */</span></div><div class="line">    <span class="built_in">CGContextStrokePath</span>(ctf);</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="画形状"><a href="#画形状" class="headerlink" title="画形状"></a>画形状</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 画简单形状</span></div><div class="line">- (<span class="keyword">void</span>)drawCycleLine</div><div class="line">&#123;</div><div class="line">    <span class="comment">/** 圆角矩形  */</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:<span class="built_in">CGRectMake</span>(<span class="number">40</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">60</span>) cornerRadius:<span class="number">5</span>];</div><div class="line">    </div><div class="line">    [path stroke];</div><div class="line">    </div><div class="line">    <span class="comment">/** 圆弧</span></div><div class="line">     * Center: 圆心</div><div class="line">     * angle:  弧度</div><div class="line">     * clockwise: yes是顺时针</div><div class="line">     */</div><div class="line">    <span class="built_in">UIBezierPath</span> *path1 = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:<span class="built_in">CGPointMake</span>(<span class="number">125</span>, <span class="number">125</span>) radius:<span class="number">100</span> startAngle:<span class="number">0</span> endAngle:M_PI clockwise:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    [path1 stroke];</div><div class="line">    </div><div class="line">    <span class="comment">//    [path fill];/** 一个完整的封闭路径，用填充，整个路径的面都是一样的 */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 画扇形</span></div><div class="line">- (<span class="keyword">void</span>)drawSector</div><div class="line">&#123;</div><div class="line">    <span class="built_in">CGPoint</span> center = <span class="built_in">CGPointMake</span>(<span class="number">125</span>, <span class="number">125</span>);</div><div class="line">    </div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:center radius:<span class="number">80</span> startAngle:<span class="number">0</span> endAngle:M_PI_2 clockwise:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    [path addLineToPoint:center];</div><div class="line">    </div><div class="line">    <span class="comment">/** 关闭路径</span></div><div class="line">     * 默认从终点画到起点</div><div class="line">     */</div><div class="line"><span class="comment">//    [path closePath];</span></div><div class="line">    </div><div class="line">    <span class="comment">/** 如果使用填充，会自动关闭路径 */</span></div><div class="line">    [path fill];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="注意-这些方法一定要在视图的-drawRect-方法中调用"><a href="#注意-这些方法一定要在视图的-drawRect-方法中调用" class="headerlink" title="注意: 这些方法一定要在视图的 drawRect 方法中调用"></a>注意: 这些方法一定要在视图的 drawRect 方法中调用</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect &#123;</div><div class="line">    <span class="comment">// Drawing code</span></div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> drawSector];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wdyit.com/2017/05/03/Quart2D 一 线面/" data-id="cj29xt7bh0006blyh75wkn4g0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wdyit.com/2017/05/03/Quart2D 一 线面/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://wdyit.com/2017/05/03/Quart2D 一 线面/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/05/03/数据库操作语句/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    数据库操作语句
+                
+            </div>
+        </a>
+    
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/04/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/05/04/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2017-05-04T02:29:04.000Z" itemprop="datePublished">2017-05-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/03/Quart2D 二 饼状图等/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2017/05/03/Quart2D 二 饼状图等/" class="title">Quart2D 二 (饼状图等)</a></p>
+                            <p class="item-date"><time datetime="2017-05-03T04:44:45.000Z" itemprop="datePublished">2017-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/03/AutoLayout适配屏幕/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2017/05/03/AutoLayout适配屏幕/" class="title">AutoLayout适配屏幕</a></p>
+                            <p class="item-date"><time datetime="2017-05-03T04:43:25.000Z" itemprop="datePublished">2017-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/03/XCode集成Cocopods/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2017/05/03/XCode集成Cocopods/" class="title">XCode集成Cocopods</a></p>
+                            <p class="item-date"><time datetime="2017-05-03T04:42:25.000Z" itemprop="datePublished">2017-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/03/上下文绘图，滤镜简单使用/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2017/05/03/上下文绘图，滤镜简单使用/" class="title">上下文绘图，滤镜简单使用</a></p>
+                            <p class="item-date"><time datetime="2017-05-03T04:41:39.000Z" itemprop="datePublished">2017-05-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoLayout/">AutoLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CocoaPods/">CocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoreData/">CoreData</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDL/">DDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSortDescriptor/">NSSortDescriptor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quart2D/">Quart2D</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIStoryboard/">UIStoryboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XCode/">XCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xib/">Xib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS，CGContextRef/">iOS，CGContextRef</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制器生命周期/">控制器生命周期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/CoreData/" style="font-size: 10px;">CoreData</a> <a href="/tags/DDL/" style="font-size: 10px;">DDL</a> <a href="/tags/NSSortDescriptor/" style="font-size: 10px;">NSSortDescriptor</a> <a href="/tags/Quart2D/" style="font-size: 15px;">Quart2D</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/UIStoryboard/" style="font-size: 10px;">UIStoryboard</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/Xib/" style="font-size: 10px;">Xib</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS，CGContextRef/" style="font-size: 10px;">iOS，CGContextRef</a> <a href="/tags/控制器生命周期/" style="font-size: 10px;">控制器生命周期</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 王冬尧<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://wdyit.com/2017/05/03/Quart2D 一 线面/';
+        
+        this.page.identifier = 'Quart2D 一 线面';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

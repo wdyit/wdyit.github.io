@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="王冬尧" />
+
+
+
+<meta name="description" content="屏幕适配的发展历史 iPhone3GS\iPhone4 没有屏幕适配可言 全部用frame、bounds、center进行布局 很多这样的现象：坐标值、宽度高度值全部写死    123objcUIButton *btn1 = [[UIButton alloc] init];btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);  iPad出现、iPhone">
+<meta name="keywords" content="iOS,AutoLayout,Xib,Storyboard">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AutoLayout适配屏幕">
+<meta property="og:url" content="http://wdyit.com/2017/05/03/AutoLayout适配屏幕/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="屏幕适配的发展历史 iPhone3GS\iPhone4 没有屏幕适配可言 全部用frame、bounds、center进行布局 很多这样的现象：坐标值、宽度高度值全部写死    123objcUIButton *btn1 = [[UIButton alloc] init];btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);  iPad出现、iPhone">
+<meta property="og:updated_time" content="2017-05-03T04:54:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AutoLayout适配屏幕">
+<meta name="twitter:description" content="屏幕适配的发展历史 iPhone3GS\iPhone4 没有屏幕适配可言 全部用frame、bounds、center进行布局 很多这样的现象：坐标值、宽度高度值全部写死    123objcUIButton *btn1 = [[UIButton alloc] init];btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);  iPad出现、iPhone">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="码路" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>AutoLayout适配屏幕 | 码路</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">王冬尧</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">码路牙子</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoLayout/">AutoLayout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CocoaPods/">CocoaPods</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoreData/">CoreData</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDL/">DDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NSSortDescriptor/">NSSortDescriptor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quart2D/">Quart2D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIStoryboard/">UIStoryboard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XCode/">XCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xib/">Xib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS，CGContextRef/">iOS，CGContextRef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制器生命周期/">控制器生命周期</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">王冬尧</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">王冬尧</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">码路牙子</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-AutoLayout适配屏幕" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/03/AutoLayout适配屏幕/" class="article-date">
+      <time datetime="2017-05-03T04:43:25.000Z" itemprop="datePublished">2017-05-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AutoLayout适配屏幕
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoLayout/">AutoLayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Storyboard/">Storyboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xib/">Xib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="屏幕适配的发展历史"><a href="#屏幕适配的发展历史" class="headerlink" title="屏幕适配的发展历史"></a>屏幕适配的发展历史</h2><ul>
+<li>iPhone3GS\iPhone4<ul>
+<li>没有屏幕适配可言</li>
+<li>全部用frame、bounds、center进行布局</li>
+<li>很多这样的现象：坐标值、宽度高度值全部写死</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">objc</div><div class="line">UIButton *btn1 = [[UIButton alloc] init];</div><div class="line">btn1.frame = CGRectMake(0, 0, 320 - b, 480 - c);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>iPad出现、iPhone横屏</p>
+<ul>
+<li>出现Autoresizing技术<ul>
+<li>让横竖屏适配相对简单</li>
+<li>让子控件可以跟随父控件的行为自动发生相应的变化</li>
+<li>前提是：关闭Autolayout功能</li>
+<li>局限性<ul>
+<li>只能解决子控件跟父控件的相对关系问题</li>
+<li>不能解决兄弟控件的相对关系问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>iOS 6.0（Xcode4）开始</p>
+<ul>
+<li>出现了Autolayout技术</li>
+<li>从Xcode5.0(iOS 7.0)开始，开始流行Autolayout</li>
+</ul>
+</li>
+</ul>
+<h2 id="Autolayout"><a href="#Autolayout" class="headerlink" title="Autolayout"></a>Autolayout</h2><ul>
+<li>两个核心概念: 参照，约束</li>
+</ul>
+<h3 id="手动添加约束"><a href="#手动添加约束" class="headerlink" title="手动添加约束"></a>手动添加约束</h3><h4 id="添加约束的规则"><a href="#添加约束的规则" class="headerlink" title="添加约束的规则"></a>添加约束的规则</h4><ul>
+<li><p>在创建约束后，需要将其添加到作用的View上</p>
+</li>
+<li><p>在添加时要注意目标View需要遵从一下规则:</p>
+<ol>
+<li>对于两个同层级view之间的约束关机，添加到他们的父view上</li>
+<li>对于不同层级view之间的约束关系，添加到最接近的共同父view上 </li>
+<li>对于有层次关系的两个view之间的约束，添加到层次较高的父view上</li>
+</ol>
+</li>
+</ul>
+<h4 id="添加约束简单例子"><a href="#添加约束简单例子" class="headerlink" title="添加约束简单例子"></a>添加约束简单例子</h4><ul>
+<li>苹果官方添加约束第一种直接添加的方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/** 不要将AutoresizingMask 转为 Autolayout的约束 */</div><div class="line">blueView.translatesAutoresizingMaskIntoConstraints = NO;</div><div class="line"></div><div class="line"> UIView *blueView = [[UIView alloc] init];</div><div class="line">    blueView.backgroundColor = [UIColor blueColor];</div><div class="line">    [self.view addSubview:blueView];</div><div class="line">    </div><div class="line">    /** 宽度约束 : 宽度是300 */</div><div class="line">    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:0.0 constant:300];</div><div class="line">    </div><div class="line">    [blueView addConstraint:widthConstraint];</div></pre></td></tr></table></figure>
+<h2 id="代码实现Autolayout方法1-系统"><a href="#代码实现Autolayout方法1-系统" class="headerlink" title="代码实现Autolayout方法1-系统"></a>代码实现Autolayout方法1-系统</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">+(<span class="keyword">instancetype</span>)constraintWithItem:(<span class="keyword">id</span>)view1 attribute:(<span class="built_in">NSLayoutAttribute</span>)attr1 relatedBy:(<span class="built_in">NSLayoutRelation</span>)relation toItem:(<span class="keyword">nullable</span> <span class="keyword">id</span>)view2 attribute:(<span class="built_in">NSLayoutAttribute</span>)attr2 multiplier:(<span class="built_in">CGFloat</span>)multiplier constant:(<span class="built_in">CGFloat</span>)c;</div><div class="line"></div><div class="line"><span class="number">1.</span> view1      : 要约束的控件</div><div class="line"><span class="number">2.</span> attr1   : 约束的类型(做什么样的约束)</div><div class="line"><span class="number">3.</span> relation     : 与参照控件之间的关系</div><div class="line"><span class="number">4.</span> view2   : 参照的控件</div><div class="line"><span class="number">5.</span> attr2   : 约束的类型</div><div class="line"><span class="number">6.</span> multiplier   : 乘数</div><div class="line"><span class="number">7.</span> c            : 常量</div><div class="line"></div><div class="line">``` </div><div class="line"></div><div class="line">* 苹果官方批量添加约束 - VFL</div><div class="line"> * 什么是VFL语言</div><div class="line">  <span class="number">1.</span> VFL全称是Visual Format Language，翻译是“可视化格式语言”</div><div class="line">  <span class="number">2.</span> VFL 是苹果公司为了简化Autolayout的编码而推出的抽象语言</div></pre></td></tr></table></figure>
+<ul>
+<li>(NSArray<__kindof nslayoutconstraint="" *=""> <em>)constraintsWithVisualFormat:(NSString </em>)format options:(NSLayoutFormatOptions)opts metrics:(nullable NSDictionary<nsstring *,id=""> <em>)metrics views:(NSDictionary&lt;NSString </em>, id&gt; *)views;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 代码实现Autolayout方法2-Masonry</div><div class="line">* 目前最流行的Autolayout第三方框架</div><div class="line">* 用优雅的代码方式编写Autolayout</div><div class="line">* 省去了苹果官方超长的Autolayout代码</div><div class="line">* 大大提高了开发效率</div><div class="line">* 框架地址: ****https://github.com/SnapKit/Masonry****</div><div class="line"></div><div class="line">#### 使用例子</div></pre></td></tr></table></figure>
+</nsstring></__kindof></li>
+</ul>
+<p>/**</p>
+<ul>
+<li><p>删除以前的约束，重新添加约束<br>   [blueView mas_remakeConstraints:^(MASConstraintMaker *make) {</p>
+<p>   }];</p>
+</li>
+<li><p>更新约束</p>
+<pre><code>[blueView mas_updateConstraints:^(MASConstraintMaker *make) {
+
+}];
+</code></pre><p>*/</p>
+<p> UIView *blueView = [[UIView alloc] init];<br> blueView.backgroundColor = [UIColor blueColor];<br> [self.view addSubview:blueView];</p>
+<p> blueView.translatesAutoresizingMaskIntoConstraints = NO;</p>
+<p> /<em>* 添加新的约束 </em>/<br> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
+<pre><code>    /** 在block中make创建约束 */
+
+/** 尺寸100*100，粘着父视图间距右下角20 */
+make.width.mas_equalTo(100);
+make.height.mas_equalTo(100);
+make.right.equalTo(self.view).offset(-20);
+make.bottom.equalTo(self.view).offset(-20);
+</code></pre><p> }];</p>
+<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
+<pre><code>/** 在block中make创建约束 */
+
+/** 尺寸100*100，粘着父视图间距右下角20 */
+make.width.height.mas_equalTo(100);
+make.height.mas_equalTo(100);
+make.right.equalTo(self.view).offset(-20);
+make.bottom.equalTo(self.view).offset(-20);
+</code></pre><p> }];</p>
+<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
+<pre><code>/** 在block中make创建约束 */
+
+/** 尺寸100*100，粘着父视图间距右下角20 */
+</code></pre><p>//        make.size.equalTo([NSValue valueWithCGSize:CGSizeMake(100, 100)]);</p>
+<pre><code>make.size.mas_equalTo(CGSizeMake(100, 100));
+make.height.mas_equalTo(100);
+make.right.equalTo(self.view).offset(-20);
+make.bottom.equalTo(self.view).offset(-20);
+</code></pre><p> }];</p>
+<p> [blueView mas_makeConstraints:^(MASConstraintMaker *make) {</p>
+<pre><code>/** 在block中make创建约束 */
+
+/** 尺寸100*100，粘着父视图间距右下角20 */
+/** 默认父控件作为参考 */
+make.size.mas_equalTo(100);
+make.right.offset(-20);
+make.bottom.offset(-20);
+</code></pre><p> }];</p>
+</li>
+</ul>
+<pre><code>/**
+ * 乘数比例
+ */
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+    /** 在block中make创建约束 */
+
+    /** 尺寸100*100，粘着父视图间距右下角20 */
+    /** 默认父控件作为参考 */
+
+    make.size.mas_equalTo(self.view).multipliedBy(0.5);/** 父视图size的一半 */
+    make.right.equalTo(self.view).offset(-20);
+    make.bottom.equalTo(self.view).offset(-20);
+
+}];
+
+
+/** 居中（水平+垂直） */
+/** 尺寸是父控件的一半 */
+
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    make.size.mas_equalTo(self.view).multipliedBy(0.5);
+    make.center.mas_equalTo(self.view);
+
+}];
+
+
+
+/** 间距 */
+/**
+ * 距离父控件内部都是50间距
+ */
+
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    make.left.mas_equalTo(self.view).offset(50);
+    make.right.mas_equalTo(self.view).offset(-50);
+    make.top.mas_equalTo(self.view).offset(50);
+    make.bottom.mas_equalTo(self.view).offset(-50);
+
+}];
+
+/** 精简 */
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    make.left.and.top.mas_equalTo(self.view).offset(50);
+    make.right.and.bottom.mas_equalTo(self.view).offset(-50);
+
+}];
+
+/** 精简边缘 */
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(50, 100, 50, 50));/** 设置间距 */
+    make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsZero);/** 跟父控件一样大 */
+}];    
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 约束类型</div><div class="line">###### 1.尺寸 : width \ height \ size</div><div class="line">###### 2.边界 : left \ leading \ right \ trailing \ top \ bottom</div><div class="line">###### 3.中心点: center \ centerY \ center X</div><div class="line">###### 4.边距 : edgs</div><div class="line"></div><div class="line">### 有个宏在头文件，用在引用头文件前面，就不用每个方法添加&quot;mas_&quot;了</div></pre></td></tr></table></figure>
+<p>//define this constant if you want to use Masonry without the ‘mas_’ prefix<br>//#define MAS_SHORTHAND</p>
+<p>//define this constant if you want to enable auto-boxing for default syntax<br>//#define MAS_SHORTHAND_GLOBALS<br>```</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/05/03/AutoLayout适配屏幕/">AutoLayout适配屏幕</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">王冬尧</a></p>
+        <p><span>发布时间:</span>2017-05-03, 12:43:25</p>
+        <p><span>最后更新:</span>2017-05-03, 12:54:01</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/03/AutoLayout适配屏幕/" title="AutoLayout适配屏幕">http://wdyit.com/2017/05/03/AutoLayout适配屏幕/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wdyit.com/2017/05/03/AutoLayout适配屏幕/　　作者: 王冬尧" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/05/03/Quart2D 二 饼状图等/">
+                    Quart2D 二 (饼状图等)
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/03/XCode集成Cocopods/">
+                    XCode集成Cocopods
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#屏幕适配的发展历史"><span class="toc-number">1.</span> <span class="toc-text">屏幕适配的发展历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autolayout"><span class="toc-number">2.</span> <span class="toc-text">Autolayout</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#手动添加约束"><span class="toc-number">2.1.</span> <span class="toc-text">手动添加约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加约束的规则"><span class="toc-number">2.1.1.</span> <span class="toc-text">添加约束的规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加约束简单例子"><span class="toc-number">2.1.2.</span> <span class="toc-text">添加约束简单例子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现Autolayout方法1-系统"><span class="toc-number">3.</span> <span class="toc-text">代码实现Autolayout方法1-系统</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"AutoLayout适配屏幕　| 码路　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/05/03/Quart2D 二 饼状图等/" title="上一篇: Quart2D 二 (饼状图等)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/03/XCode集成Cocopods/" title="下一篇: XCode集成Cocopods">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/Quart2D 二 饼状图等/">Quart2D 二 (饼状图等)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/AutoLayout适配屏幕/">AutoLayout适配屏幕</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/XCode集成Cocopods/">XCode集成Cocopods</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/上下文绘图，滤镜简单使用/">上下文绘图，滤镜简单使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/视图控制器/">视图控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/数据库操作语句/">数据库操作语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/Quart2D 一 线面/">Quart2D 一 简单形状、线</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 王冬尧
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

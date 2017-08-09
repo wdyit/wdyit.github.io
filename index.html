@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -230,7 +230,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -240,7 +240,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -263,6 +263,168 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://wdyit.com/2017/06/03/DYCategorys/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="码路芽子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/03/DYCategorys/" itemprop="url">iOS 常用的API分类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T12:42:25+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/06/03/DYCategorys/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://wdyit.com/2017/06/03/DYCategorys/" class="cy_cmt_count" data-xid="2017/06/03/DYCategorys/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="分类简介"><a href="#分类简介" class="headerlink" title="分类简介"></a>分类简介</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><blockquote>
+<p>我们在写项目的时候，肯定有很多的输入需要验证。</p>
+<ol>
+<li>手机号正确吗</li>
+<li>身份证号正确吗</li>
+<li>输入的是不是只有两位小数的数字<br>等等这些，日常积累自己写了一些简单的分类，闲话少说，上代码</li>
+</ol>
+</blockquote>
+<h2 id="字符串分类"><a href="#字符串分类" class="headerlink" title="字符串分类"></a>字符串分类</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 输入限制</span></div><div class="line"><span class="comment">// 验证只能输入数字，两位小数</span></div><div class="line">+ (<span class="built_in">BOOL</span>)isOnlyNumAndTwoDecimal:(<span class="built_in">NSString</span> *)tfText range:(<span class="built_in">NSRange</span>)range string:(<span class="built_in">NSString</span> *)string;</div><div class="line"><span class="comment">// 判断是不是纯数字</span></div><div class="line">- (<span class="built_in">BOOL</span>)isAllNum;</div><div class="line"><span class="comment">// 判断是否为整形</span></div><div class="line">- (<span class="built_in">BOOL</span>)isPureInt;</div><div class="line"><span class="comment">// 判断是否为浮点形</span></div><div class="line">- (<span class="built_in">BOOL</span>)isPureFloat;</div><div class="line"><span class="comment">// 限制只能输入数字</span></div><div class="line">- (<span class="built_in">BOOL</span>) isOnlyNumber;</div><div class="line"></div><div class="line"><span class="comment">// 有效的电话号码</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidMobileNumber;</div><div class="line"><span class="comment">// 有效的银行卡号</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidBankCardNumber;</div><div class="line"><span class="comment">// 有效的邮箱</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidEmail;</div><div class="line"><span class="comment">// 有效的字母数字密码</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidAlphaNumberPassword;</div><div class="line"></div><div class="line"><span class="comment">// 检测有效身份证</span></div><div class="line"><span class="comment">// 15位</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidIdentifyFifteen;</div><div class="line"><span class="comment">// 18位</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidIdentifyEighteen;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 判断字符串</span></div><div class="line"><span class="comment">// 判断是不是长度为0空的</span></div><div class="line">- (<span class="built_in">BOOL</span>)isNil;</div></pre></td></tr></table></figure>
+<h2 id="UIView-的分类"><a href="#UIView-的分类" class="headerlink" title="UIView 的分类"></a>UIView 的分类</h2><blockquote>
+<p>主要是用来方便实用，有了这些，以后就不用写<code>self.view.frame.size.width</code>这类烦人的东西<br>直接写出来 <code>self.view.wdyWidth</code>是不是很方便</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 设置属性 */</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyWidth;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyHeight;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyX;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyY;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGSize</span> wdySize;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyCenterX;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyCenterY;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 在分类中声明@property, 只会生成方法的声明, 不会生成方法的实现和生成_下划线的成员变量</div><div class="line"> */</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断是不是视图真正在主窗口上</div><div class="line"> */</div><div class="line">- (<span class="built_in">BOOL</span>)isShowingOnKeyWindow;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 从xib创建</div><div class="line"> */</div><div class="line">+ (<span class="keyword">instancetype</span>)viewFromXib;</div></pre></td></tr></table></figure>
+<h2 id="颜色分类"><a href="#颜色分类" class="headerlink" title="颜色分类"></a>颜色分类</h2><blockquote>
+<p>颜色有时候UI设计师给的是16进制颜色，需要使用的时候，colorCategory派上用场了</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">+ (<span class="built_in">UIColor</span> *)colorWithHex:(uint)hex alpha:(<span class="built_in">CGFloat</span>)alpha;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> *  十六进制字符串转颜色</div><div class="line"> */</div><div class="line">+ (<span class="built_in">UIColor</span> *)colorWithHexString:(<span class="built_in">NSString</span> *)HexString;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorRGBonvertToHSB:(<span class="built_in">UIColor</span>*)color withBrighnessDelta:(<span class="built_in">CGFloat</span>)delta;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorRGBonvertToHSB:(<span class="built_in">UIColor</span>*)color withAlphaDelta:(<span class="built_in">CGFloat</span>)delta;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorWithHex:(<span class="built_in">NSInteger</span>)hexValue;</div><div class="line"></div><div class="line">```  </div><div class="line"></div><div class="line"><span class="meta">## 图片分类</span></div><div class="line">&gt; 实用图片，有时候需要旋转操作，拉伸图片，放大图片</div><div class="line"></div><div class="line">```objc</div><div class="line"><span class="comment">//由颜色生成图片</span></div><div class="line">+ (<span class="built_in">UIImage</span> *) imageWithColor:(<span class="built_in">UIColor</span>*)color;</div><div class="line"></div><div class="line"><span class="comment">//将图片剪裁至目标尺寸</span></div><div class="line">+ (<span class="built_in">UIImage</span> *) imageByScalingAndCroppingForSourceImage:(<span class="built_in">UIImage</span> *)sourceImage targetSize:(<span class="built_in">CGSize</span>)targetSize;</div><div class="line"></div><div class="line"><span class="comment">//图片旋转角度</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageRotatedByDegrees:(<span class="built_in">CGFloat</span>)degrees;</div><div class="line"></div><div class="line"><span class="comment">//拉伸图片UIEdgeInsets</span></div><div class="line">- (<span class="built_in">UIImage</span> *) resizableImage:(<span class="built_in">UIEdgeInsets</span>)insets;</div><div class="line"></div><div class="line"><span class="comment">//拉伸图片CGFloat</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByResizeToScale:(<span class="built_in">CGFloat</span>)scale;</div><div class="line"></div><div class="line"><span class="comment">//放大图片CGSize</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByResizeWithMaxSize:(<span class="built_in">CGSize</span>)size;</div><div class="line"></div><div class="line"><span class="comment">//小样图图片CGSize</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageWithThumbnailForSize:(<span class="built_in">CGSize</span>)size;</div><div class="line"></div><div class="line"><span class="comment">//通过Rect剪裁图片</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByCropToRect:(<span class="built_in">CGRect</span>)rect;</div><div class="line"></div><div class="line"><span class="comment">//图片增加圆角</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByRoundCornerRadius:(<span class="built_in">CGFloat</span>)radius;</div><div class="line"></div><div class="line"><span class="comment">//图片增加圆角及边框</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByRoundCornerRadius:(<span class="built_in">CGFloat</span>)radius</div><div class="line">                          borderWidth:(<span class="built_in">CGFloat</span>)borderWidth</div><div class="line">                          borderColor:(<span class="built_in">UIColor</span> *)borderColor;</div><div class="line"></div><div class="line"><span class="comment">//图片向左90度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotateLeft90;</div><div class="line"></div><div class="line"><span class="comment">//图片向右90度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotateRight90;</div><div class="line"></div><div class="line"><span class="comment">//图片转180度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotate180;</div></pre></td></tr></table></figure>
+<h3 id="可以去我的GitHub查看下载实用工具"><a href="#可以去我的GitHub查看下载实用工具" class="headerlink" title="可以去我的GitHub查看下载实用工具"></a>可以去我的GitHub查看下载实用工具</h3><p>Github : <a href="https://github.com/wdyit/DYCategory" target="_blank" rel="external">https://github.com/wdyit/DYCategory</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -302,7 +464,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-05T11:09:08+08:00">
                 2017-05-05
@@ -323,7 +485,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -464,7 +626,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:44:45+08:00">
                 2017-05-03
@@ -485,7 +647,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -610,7 +772,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:43:25+08:00">
                 2017-05-03
@@ -631,7 +793,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -919,7 +1081,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:42:25+08:00">
                 2017-05-03
@@ -940,7 +1102,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1104,7 +1266,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:41:39+08:00">
                 2017-05-03
@@ -1125,7 +1287,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1257,7 +1419,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:40:16+08:00">
                 2017-05-03
@@ -1278,7 +1440,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1441,7 +1603,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T12:38:30+08:00">
                 2017-05-03
@@ -1462,7 +1624,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1655,7 +1817,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T09:28:23+08:00">
                 2017-05-03
@@ -1676,7 +1838,7 @@ make.bottom.offset(-20);
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1730,7 +1892,7 @@ make.bottom.offset(-20);
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/03/Quart2D 一 线面/">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1811,8 +1973,8 @@ make.bottom.offset(-20);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1823,7 +1985,7 @@ make.bottom.offset(-20);
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1833,8 +1995,8 @@ make.bottom.offset(-20);
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1904,7 +2066,7 @@ make.bottom.offset(-20);
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

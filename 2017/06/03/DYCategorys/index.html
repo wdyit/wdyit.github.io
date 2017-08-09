@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,XCode,Category,category,categorys," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="分类简介分类 我们在写项目的时候，肯定有很多的输入需要验证。  手机号正确吗 身份证号正确吗 输入的是不是只有两位小数的数字等等这些，日常积累自己写了一些简单的分类，闲话少说，上代码   字符串分类123456789101112131415161718192021222324252627282930#pragma mark - 输入限制// 验证只能输入数字，两位小数+ (BOOL)isOnlyN">
+<meta name="keywords" content="iOS,XCode,Category,category,categorys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 常用的API分类">
+<meta property="og:url" content="http://wdyit.com/2017/06/03/DYCategorys/index.html">
+<meta property="og:site_name" content="码路">
+<meta property="og:description" content="分类简介分类 我们在写项目的时候，肯定有很多的输入需要验证。  手机号正确吗 身份证号正确吗 输入的是不是只有两位小数的数字等等这些，日常积累自己写了一些简单的分类，闲话少说，上代码   字符串分类123456789101112131415161718192021222324252627282930#pragma mark - 输入限制// 验证只能输入数字，两位小数+ (BOOL)isOnlyN">
+<meta property="og:updated_time" content="2017-08-09T00:47:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 常用的API分类">
+<meta name="twitter:description" content="分类简介分类 我们在写项目的时候，肯定有很多的输入需要验证。  手机号正确吗 身份证号正确吗 输入的是不是只有两位小数的数字等等这些，日常积累自己写了一些简单的分类，闲话少说，上代码   字符串分类123456789101112131415161718192021222324252627282930#pragma mark - 输入限制// 验证只能输入数字，两位小数+ (BOOL)isOnlyN">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wdyit.com/2017/06/03/DYCategorys/"/>
+
+
+
+
+
+  <title>iOS 常用的API分类 | 码路</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">码路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个有梦想的人，start from zero</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://wdyit.com/2017/06/03/DYCategorys/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="码路芽子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS 常用的API分类</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T12:42:25+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/06/03/DYCategorys/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/06/03/DYCategorys/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="分类简介"><a href="#分类简介" class="headerlink" title="分类简介"></a>分类简介</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><blockquote>
+<p>我们在写项目的时候，肯定有很多的输入需要验证。</p>
+<ol>
+<li>手机号正确吗</li>
+<li>身份证号正确吗</li>
+<li>输入的是不是只有两位小数的数字<br>等等这些，日常积累自己写了一些简单的分类，闲话少说，上代码</li>
+</ol>
+</blockquote>
+<h2 id="字符串分类"><a href="#字符串分类" class="headerlink" title="字符串分类"></a>字符串分类</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - 输入限制</span></div><div class="line"><span class="comment">// 验证只能输入数字，两位小数</span></div><div class="line">+ (<span class="built_in">BOOL</span>)isOnlyNumAndTwoDecimal:(<span class="built_in">NSString</span> *)tfText range:(<span class="built_in">NSRange</span>)range string:(<span class="built_in">NSString</span> *)string;</div><div class="line"><span class="comment">// 判断是不是纯数字</span></div><div class="line">- (<span class="built_in">BOOL</span>)isAllNum;</div><div class="line"><span class="comment">// 判断是否为整形</span></div><div class="line">- (<span class="built_in">BOOL</span>)isPureInt;</div><div class="line"><span class="comment">// 判断是否为浮点形</span></div><div class="line">- (<span class="built_in">BOOL</span>)isPureFloat;</div><div class="line"><span class="comment">// 限制只能输入数字</span></div><div class="line">- (<span class="built_in">BOOL</span>) isOnlyNumber;</div><div class="line"></div><div class="line"><span class="comment">// 有效的电话号码</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidMobileNumber;</div><div class="line"><span class="comment">// 有效的银行卡号</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidBankCardNumber;</div><div class="line"><span class="comment">// 有效的邮箱</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidEmail;</div><div class="line"><span class="comment">// 有效的字母数字密码</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidAlphaNumberPassword;</div><div class="line"></div><div class="line"><span class="comment">// 检测有效身份证</span></div><div class="line"><span class="comment">// 15位</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidIdentifyFifteen;</div><div class="line"><span class="comment">// 18位</span></div><div class="line">- (<span class="built_in">BOOL</span>) isValidIdentifyEighteen;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 判断字符串</span></div><div class="line"><span class="comment">// 判断是不是长度为0空的</span></div><div class="line">- (<span class="built_in">BOOL</span>)isNil;</div></pre></td></tr></table></figure>
+<h2 id="UIView-的分类"><a href="#UIView-的分类" class="headerlink" title="UIView 的分类"></a>UIView 的分类</h2><blockquote>
+<p>主要是用来方便实用，有了这些，以后就不用写<code>self.view.frame.size.width</code>这类烦人的东西<br>直接写出来 <code>self.view.wdyWidth</code>是不是很方便</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 设置属性 */</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyWidth;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyHeight;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyX;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyY;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGSize</span> wdySize;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyCenterX;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> wdyCenterY;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 在分类中声明@property, 只会生成方法的声明, 不会生成方法的实现和生成_下划线的成员变量</div><div class="line"> */</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 判断是不是视图真正在主窗口上</div><div class="line"> */</div><div class="line">- (<span class="built_in">BOOL</span>)isShowingOnKeyWindow;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 从xib创建</div><div class="line"> */</div><div class="line">+ (<span class="keyword">instancetype</span>)viewFromXib;</div></pre></td></tr></table></figure>
+<h2 id="颜色分类"><a href="#颜色分类" class="headerlink" title="颜色分类"></a>颜色分类</h2><blockquote>
+<p>颜色有时候UI设计师给的是16进制颜色，需要使用的时候，colorCategory派上用场了</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">+ (<span class="built_in">UIColor</span> *)colorWithHex:(uint)hex alpha:(<span class="built_in">CGFloat</span>)alpha;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> *  十六进制字符串转颜色</div><div class="line"> */</div><div class="line">+ (<span class="built_in">UIColor</span> *)colorWithHexString:(<span class="built_in">NSString</span> *)HexString;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorRGBonvertToHSB:(<span class="built_in">UIColor</span>*)color withBrighnessDelta:(<span class="built_in">CGFloat</span>)delta;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorRGBonvertToHSB:(<span class="built_in">UIColor</span>*)color withAlphaDelta:(<span class="built_in">CGFloat</span>)delta;</div><div class="line"></div><div class="line">+ (<span class="built_in">UIColor</span>*) colorWithHex:(<span class="built_in">NSInteger</span>)hexValue;</div><div class="line"></div><div class="line">```  </div><div class="line"></div><div class="line"><span class="meta">## 图片分类</span></div><div class="line">&gt; 实用图片，有时候需要旋转操作，拉伸图片，放大图片</div><div class="line"></div><div class="line">```objc</div><div class="line"><span class="comment">//由颜色生成图片</span></div><div class="line">+ (<span class="built_in">UIImage</span> *) imageWithColor:(<span class="built_in">UIColor</span>*)color;</div><div class="line"></div><div class="line"><span class="comment">//将图片剪裁至目标尺寸</span></div><div class="line">+ (<span class="built_in">UIImage</span> *) imageByScalingAndCroppingForSourceImage:(<span class="built_in">UIImage</span> *)sourceImage targetSize:(<span class="built_in">CGSize</span>)targetSize;</div><div class="line"></div><div class="line"><span class="comment">//图片旋转角度</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageRotatedByDegrees:(<span class="built_in">CGFloat</span>)degrees;</div><div class="line"></div><div class="line"><span class="comment">//拉伸图片UIEdgeInsets</span></div><div class="line">- (<span class="built_in">UIImage</span> *) resizableImage:(<span class="built_in">UIEdgeInsets</span>)insets;</div><div class="line"></div><div class="line"><span class="comment">//拉伸图片CGFloat</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByResizeToScale:(<span class="built_in">CGFloat</span>)scale;</div><div class="line"></div><div class="line"><span class="comment">//放大图片CGSize</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByResizeWithMaxSize:(<span class="built_in">CGSize</span>)size;</div><div class="line"></div><div class="line"><span class="comment">//小样图图片CGSize</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageWithThumbnailForSize:(<span class="built_in">CGSize</span>)size;</div><div class="line"></div><div class="line"><span class="comment">//通过Rect剪裁图片</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByCropToRect:(<span class="built_in">CGRect</span>)rect;</div><div class="line"></div><div class="line"><span class="comment">//图片增加圆角</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByRoundCornerRadius:(<span class="built_in">CGFloat</span>)radius;</div><div class="line"></div><div class="line"><span class="comment">//图片增加圆角及边框</span></div><div class="line">- (<span class="built_in">UIImage</span> *) imageByRoundCornerRadius:(<span class="built_in">CGFloat</span>)radius</div><div class="line">                          borderWidth:(<span class="built_in">CGFloat</span>)borderWidth</div><div class="line">                          borderColor:(<span class="built_in">UIColor</span> *)borderColor;</div><div class="line"></div><div class="line"><span class="comment">//图片向左90度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotateLeft90;</div><div class="line"></div><div class="line"><span class="comment">//图片向右90度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotateRight90;</div><div class="line"></div><div class="line"><span class="comment">//图片转180度</span></div><div class="line">- (<span class="built_in">UIImage</span> *)imageByRotate180;</div></pre></td></tr></table></figure>
+<h3 id="可以去我的GitHub查看下载实用工具"><a href="#可以去我的GitHub查看下载实用工具" class="headerlink" title="可以去我的GitHub查看下载实用工具"></a>可以去我的GitHub查看下载实用工具</h3><p>Github : <a href="https://github.com/wdyit/DYCategory" target="_blank" rel="external">https://github.com/wdyit/DYCategory</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/XCode/" rel="tag"># XCode</a>
+          
+            <a href="/tags/Category/" rel="tag"># Category</a>
+          
+            <a href="/tags/category/" rel="tag"># category</a>
+          
+            <a href="/tags/categorys/" rel="tag"># categorys</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/05/Hexo和GitHub搭建专属博客/" rel="next" title="Hexo和GitHub搭建专属博客">
+                <i class="fa fa-chevron-left"></i> Hexo和GitHub搭建专属博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="码路芽子" />
+          <p class="site-author-name" itemprop="name">码路芽子</p>
+           
+              <p class="site-description motion-element" itemprop="description">一个有梦想的人，start from zero</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wdyit" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2717024360" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分类简介"><span class="nav-number">1.</span> <span class="nav-text">分类简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串分类"><span class="nav-number">1.2.</span> <span class="nav-text">字符串分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIView-的分类"><span class="nav-number">1.3.</span> <span class="nav-text">UIView 的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色分类"><span class="nav-number">1.4.</span> <span class="nav-text">颜色分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可以去我的GitHub查看下载实用工具"><span class="nav-number">1.4.1.</span> <span class="nav-text">可以去我的GitHub查看下载实用工具</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">码路芽子</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt0ltA7S';
+      var conf = 'f20054ad5212272c6818135f4410ec6e';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
